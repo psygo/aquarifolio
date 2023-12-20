@@ -1,9 +1,12 @@
 "use client";
 
+import { Suspense } from "react";
+
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import { Physics } from "@react-three/rapier";
 
-import { Experience } from "./components/exports";
+import { Experience } from "@components/exports";
 
 export default function Home() {
   return (
@@ -16,7 +19,11 @@ export default function Home() {
           position={[300, 300, 4000]}
         />
 
-        <Experience />
+        <Suspense>
+          <Physics debug>
+            <Experience />
+          </Physics>
+        </Suspense>
       </Canvas>
     </main>
   );
