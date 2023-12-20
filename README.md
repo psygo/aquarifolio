@@ -11,6 +11,28 @@ My portfolio, done with [Three.js](https://threejs.org/).
   - [Drei](https://github.com/pmndrs/drei)
   - [React Three Rapier](https://github.com/pmndrs/react-three-rapier), a physics engine for Three.js
 
+## Tasks
+
+- [x] Extruded SVG Physics
+- [ ] Add performance tracking
+  - Like [in this React Three Rapier demo](https://react-three-rapier.pmnd.rs/performance)
+- [ ] Grabbable Objects
+- [ ] Intro 3D Text like [this](https://youtu.be/jIkn9dLBfNc)
+- [ ] Portal Entrance like in the beginning of [this video](https://youtu.be/2W_VR92Pqgs)
+- Logos as Objects and HTML
+  - fanaro.io
+    - [x] 3D Logo
+    - [ ] HTML
+  - Three.js
+    - [ ] 3D Logo
+    - [ ] HTML
+  - React.js
+    - [ ] 3D Logo
+    - [ ] HTML
+  - Next.js
+    - [ ] 3D Logo
+    - [ ] HTML
+
 ## References
 
 - A lot of my learning is done through my [three-lab repository](https://github.com/psygo/three-lab).
