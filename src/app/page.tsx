@@ -11,7 +11,7 @@ import { Experience } from "@components/exports";
 export default function Home() {
   return (
     <main style={{ width: "100vw", height: "100vh" }}>
-      <Canvas>
+      <Canvas camera={{ position: [25, 20, 3], fov: 75 }}>
         <OrbitControls />
         <ambientLight intensity={0.5} />
         <spotLight

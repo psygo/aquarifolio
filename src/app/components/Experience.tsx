@@ -6,6 +6,7 @@ import {
   Sphere,
 } from "@react-three/drei";
 import { RigidBody } from "@react-three/rapier";
+import ExtrudedSvg from "./ExtrudedSvg";
 
 export function Experience() {
   return (
@@ -16,6 +17,14 @@ export function Experience() {
         intensity={0.4}
       />
       <OrbitControls />
+
+      <RigidBody colliders="hull" position={[-5, 20, 0]}>
+        <ExtrudedSvg
+          filename="fanaro.io.svg"
+          scale={0.1}
+          position={[-5, 10, 0]}
+        />
+      </RigidBody>
 
       <RigidBody position={[0, 10, 3]}>
         <Box>
