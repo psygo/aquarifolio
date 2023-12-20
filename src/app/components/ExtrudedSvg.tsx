@@ -10,7 +10,7 @@ type ExtrudedSvgProps = {
   scale?: number;
   position?: [number, number, number];
 };
-export default function ExtrudedSvg({
+export function ExtrudedSvg({
   filename,
   scale = 1,
   position = [-10, 10, 0],

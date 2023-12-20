@@ -6,7 +6,9 @@ import {
   Sphere,
 } from "@react-three/drei";
 import { RigidBody } from "@react-three/rapier";
-import ExtrudedSvg from "./ExtrudedSvg";
+
+import { ExtrudedSvg } from "./ExtrudedSvg";
+import { Squircle } from "./Squircle";
 
 export function Experience() {
   return (
@@ -24,6 +26,10 @@ export function Experience() {
           scale={0.1}
           position={[-5, 10, 0]}
         />
+      </RigidBody>
+
+      <RigidBody colliders="hull" position={[-2, 20, 0]}>
+        <Squircle />
       </RigidBody>
 
       <RigidBody position={[0, 10, 3]}>
