@@ -18,3 +18,7 @@ My portfolio, done with [Three.js](https://threejs.org/).
 - My fundamentals come from Bruno Simon's amazing [Three.js Journey](https://threejs-journey.com/) course.
 - [Wawa Sensei's YouTube Channel](https://www.youtube.com/@WawaSensei)
 - [Poimandres Open Source Collective](https://github.com/pmndrs)
+- 3D HTML:
+  - [HTML on a Laptop](https://codesandbox.io/p/sandbox/mixing-html-and-webgl-w-occlusion-9keg6?file=%2Fsrc%2FApp.js%3A32%2C20)
+- Others:
+  - [Floating Astronaut](https://codesandbox.io/p/sandbox/backdrop-and-cables-2ij9u?file=%2Fsrc%2FApp.js)
