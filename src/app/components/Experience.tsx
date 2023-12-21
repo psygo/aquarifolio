@@ -6,6 +6,7 @@ import { RigidBody } from "@react-three/rapier";
 import {
   FanaroIoLogo,
   GithubLogo,
+  NextjsLogo,
   ReactLogo,
   Squircle,
   ThreejsLogo,
@@ -26,6 +27,7 @@ function Logos() {
     <group>
       <FanaroIoLogo />
       <GithubLogo />
+      <NextjsLogo />
       <ReactLogo />
       <ThreejsLogo />
     </group>

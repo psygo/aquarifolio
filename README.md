@@ -16,6 +16,7 @@ My portfolio, done with [Three.js](https://threejs.org/).
 - [x] Extruded SVG Physics
 - [x] Add performance tracking
 - [ ] Logos as Objects with HTML
+- [ ] Go GLTF Model
 - [ ] Add other random, interesting objects
 - [ ] Grabbable Objects
 - [ ] Intro 3D Text, like [this](https://youtu.be/jIkn9dLBfNc)
