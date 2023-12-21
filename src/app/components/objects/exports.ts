@@ -1,5 +1,2 @@
-export * from "./ExtrudedSvg";
-export * from "./Squircle";
-
-export * from "./FanaroIoLogo";
-export * from "./ThreejsLogo";
+export * from "./Logos/exports";
+export * from "./Other/exports";

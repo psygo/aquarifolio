@@ -1,4 +1,4 @@
-import { ExtrudedSvg } from "./ExtrudedSvg";
+import { ExtrudedSvg } from "../ExtrudedSvg";
 
 export function FanaroIoLogo() {
   return (
