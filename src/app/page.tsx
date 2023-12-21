@@ -38,7 +38,7 @@ export default function ThreePortfolio() {
 
         <Lighting />
 
-        <OrbitControls />
+        {/* <OrbitControls /> */}
 
         <Suspense>
           <Physics debug>

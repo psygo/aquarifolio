@@ -38,7 +38,7 @@ export function Squircle() {
   const ref = useRef<Mesh>(null);
 
   return (
-    <RigidBody colliders="hull" position={[-2, 20, 0]}>
+    <RigidBody colliders="cuboid" position={[-2, 20, 0]}>
       <mesh
         ref={ref}
         geometry={squircleGeometry}
