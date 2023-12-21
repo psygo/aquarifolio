@@ -14,11 +14,13 @@ My portfolio, done with [Three.js](https://threejs.org/).
 ## Tasks
 
 - [x] Extruded SVG Physics
-- [ ] Logos as Objects and HTML
-- [ ] Add performance tracking
-  - Like [in this React Three Rapier demo](https://react-three-rapier.pmnd.rs/performance)
+- [x] Add performance tracking
+  - [x] Drei's `<Stats />`
+  - [x] [r3f-perf](https://github.com/utsuboco/r3f-perf)
+- [ ] Logos as Objects with HTML
+- [ ] Add other random, interesting objects
 - [ ] Grabbable Objects
-- [ ] Intro 3D Text like [this](https://youtu.be/jIkn9dLBfNc)
+- [ ] Intro 3D Text, like [this](https://youtu.be/jIkn9dLBfNc)
 - [ ] Portal Entrance like in the beginning of [this video](https://youtu.be/2W_VR92Pqgs)
 
 ## References
