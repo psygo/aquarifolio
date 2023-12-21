@@ -15,7 +15,7 @@ import {
 function Plane() {
   return (
     <RigidBody type="fixed">
-      <Box position={[0, 0, 0]} args={[10, 1, 10]}>
+      <Box position={[0, 0, 0]} args={[20, 1, 20]}>
         <meshStandardMaterial color="springgreen" />
       </Box>
     </RigidBody>
