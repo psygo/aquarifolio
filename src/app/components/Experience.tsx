@@ -1,6 +1,8 @@
 "use client";
 
-import * as THREE from "three";
+// import { useState } from "react";
+
+// import * as THREE from "three";
 import { Box } from "@react-three/drei";
 import { RigidBody } from "@react-three/rapier";
 
@@ -8,14 +10,13 @@ import {
   FanaroIoLogo,
   FicLogo,
   GithubLogo,
-  Icosahedron,
+  // Icosahedron,
   NextjsLogo,
   ReactLogo,
   Squircle,
   ThreejsLogo,
   YtKbdNavLogo,
 } from "./objects/exports";
-import { useState } from "react";
 
 function Plane() {
   return (
@@ -42,18 +43,18 @@ function Logos() {
 }
 
 function OtherObjects() {
-  const [isDragging, setIsDragging] = useState(false);
-  const floorPlane = new THREE.Plane(
-    new THREE.Vector3(0, 1, 0),
-    0
-  );
+  // const [isDragging, setIsDragging] = useState(false);
+  // const floorPlane = new THREE.Plane(
+  //   new THREE.Vector3(0, 1, 0),
+  //   0
+  // );
 
   return (
     <group>
-      <Icosahedron
+      {/* <Icosahedron
         setIsDragging={setIsDragging}
         floorPlane={floorPlane}
-      />
+      /> */}
       <Squircle />
     </group>
   );

@@ -27,6 +27,10 @@ My portfolio, done with [Three.js](https://threejs.org/).
 - A lot of my learning is done through my [three-lab repository](https://github.com/psygo/three-lab).
 - [Three.js Examples](https://threejs.org/examples/#webgl_animation_keyframes)
 - My fundamentals come from Bruno Simon's amazing [Three.js Journey](https://threejs-journey.com/) course.
+- From React Three Fiber's Showcase Examples:
+  - [Color Grading](https://codesandbox.io/p/sandbox/color-grading-wvgxp?file=%2Fsrc%2FApp.js)
+  - [React Ellipse Curve](https://codesandbox.io/p/sandbox/react-ellipsecurve-xzi6ps?file=%2Fsrc%2FApp.js)
+  - [Portals](https://codesandbox.io/p/sandbox/portals-ik11ln?file=%2Fsrc%2FApp.js)
 - [Wawa Sensei's YouTube Channel](https://www.youtube.com/@WawaSensei)
 - [Poimandres Open Source Collective](https://github.com/pmndrs)
 - 3D HTML:
