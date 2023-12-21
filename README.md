@@ -15,8 +15,6 @@ My portfolio, done with [Three.js](https://threejs.org/).
 
 - [x] Extruded SVG Physics
 - [x] Add performance tracking
-  - [x] Drei's `<Stats />`
-  - [x] [r3f-perf](https://github.com/utsuboco/r3f-perf)
 - [ ] Logos as Objects with HTML
 - [ ] Add other random, interesting objects
 - [ ] Grabbable Objects
