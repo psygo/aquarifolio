@@ -3,7 +3,11 @@
 import { Box } from "@react-three/drei";
 import { RigidBody } from "@react-three/rapier";
 
-import { FanaroIoLogo, Squircle } from "./objects/exports";
+import {
+  FanaroIoLogo,
+  Squircle,
+  ThreejsLogo,
+} from "./objects/exports";
 
 function Plane() {
   return (
@@ -20,6 +24,7 @@ export function Experience() {
     <group>
       <group>
         <FanaroIoLogo />
+        <ThreejsLogo />
         <Squircle />
       </group>
 

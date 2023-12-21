@@ -3,18 +3,20 @@ import { useMemo, useState } from "react";
 import * as THREE from "three";
 import { SVGLoader } from "three/examples/jsm/Addons.js";
 import { useLoader } from "@react-three/fiber";
-import { Html, Text } from "@react-three/drei";
+import { Html } from "@react-three/drei";
 import { RigidBody } from "@react-three/rapier";
 
 export type Position = [number, number, number];
 
 type ExtrudedSvgProps = {
   filename: string;
+  depth?: number;
   scale?: number;
   position?: Position;
 };
 export function ExtrudedSvg({
   filename,
+  depth = 5,
   scale = 1,
   position = [-10, 10, 0],
 }: ExtrudedSvgProps) {
@@ -27,7 +29,7 @@ export function ExtrudedSvg({
   const [visibleHtml, setVisibleHtml] = useState(false);
 
   return (
-    <RigidBody colliders="hull" position={[-5, 20, 0]}>
+    <RigidBody colliders="hull" position={position}>
       <group>
         <Html
           style={{
@@ -64,7 +66,7 @@ export function ExtrudedSvg({
                 args={[
                   s,
                   {
-                    depth: 5,
+                    depth,
                     bevelEnabled: false,
                     steps: 30,
                   },
