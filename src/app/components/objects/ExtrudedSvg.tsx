@@ -4,18 +4,23 @@ import * as THREE from "three";
 import { SVGLoader } from "three/examples/jsm/Addons.js";
 import { useLoader } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
-import { RigidBody } from "@react-three/rapier";
+import {
+  RigidBody,
+  RigidBodyAutoCollider,
+} from "@react-three/rapier";
 
 export type Position = [number, number, number];
 
 type ExtrudedSvgProps = {
   filename: string;
+  colliderDefault?: RigidBodyAutoCollider;
   depth?: number;
   scale?: number;
   position?: Position;
 };
 export function ExtrudedSvg({
   filename,
+  colliderDefault = "hull",
   depth = 5,
   scale = 1,
   position = [-10, 10, 0],
@@ -29,7 +34,10 @@ export function ExtrudedSvg({
   const [visibleHtml, setVisibleHtml] = useState(false);
 
   return (
-    <RigidBody colliders="hull" position={position}>
+    <RigidBody
+      colliders={colliderDefault}
+      position={position}
+    >
       <group>
         <Html
           style={{

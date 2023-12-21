@@ -5,11 +5,13 @@ import { RigidBody } from "@react-three/rapier";
 
 import {
   FanaroIoLogo,
+  FicLogo,
   GithubLogo,
   NextjsLogo,
   ReactLogo,
   Squircle,
   ThreejsLogo,
+  YtKbdNavLogo,
 } from "./objects/exports";
 
 function Plane() {
@@ -26,10 +28,12 @@ function Logos() {
   return (
     <group>
       <FanaroIoLogo />
+      <FicLogo />
       <GithubLogo />
       <NextjsLogo />
       <ReactLogo />
       <ThreejsLogo />
+      <YtKbdNavLogo />
     </group>
   );
 }
