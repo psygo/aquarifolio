@@ -2,6 +2,7 @@
 
 import { Suspense, useRef } from "react";
 
+import { Portfolio2 } from "@components/Portfolio2";
 import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
@@ -17,7 +18,6 @@ import {
 import { Perf } from "r3f-perf";
 
 import { Experience } from "@components/exports";
-import { RigidBody as RG } from "three/examples/jsm/Addons.js";
 
 function Lighting() {
   return (
@@ -67,6 +67,10 @@ function Pointer({ vec = new THREE.Vector3() }) {
     </RigidBody>
   );
 }
+
+// export default function Port() {
+//   return <Portfolio2/>
+// }
 
 export default function ThreePortfolio() {
   return (

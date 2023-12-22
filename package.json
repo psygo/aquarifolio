@@ -26,6 +26,7 @@
     "@react-spring/three": "^9.7.3",
     "@react-three/drei": "^9.92.5",
     "@react-three/fiber": "^8.15.12",
+    "@react-three/postprocessing": "^2.15.11",
     "@react-three/rapier": "^1.2.1",
     "@types/three": "^0.159.0",
     "@use-gesture/react": "^10.3.0",

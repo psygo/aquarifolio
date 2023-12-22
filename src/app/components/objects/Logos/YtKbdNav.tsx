@@ -8,6 +8,7 @@ export function YtKbdNavLogo() {
   return (
     <ExtrudedSvg
       filename="yt_kbd_nav.svg"
+      colliderDefault="cuboid"
       scale={0.01}
       depth={40}
       position={[1, 17, -2]}
