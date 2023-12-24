@@ -1,9 +1,12 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 
 import * as THREE from "three";
 import { SVGLoader } from "three/examples/jsm/Addons.js";
-import { useLoader } from "@react-three/fiber";
-import { Html } from "@react-three/drei";
+import { useFrame, useLoader } from "@react-three/fiber";
+import {
+  Html,
+  MeshTransmissionMaterial,
+} from "@react-three/drei";
 import {
   RigidBody,
   RigidBodyAutoCollider,
@@ -33,10 +36,32 @@ export function ExtrudedSvg({
 
   const [visibleHtml, setVisibleHtml] = useState(false);
 
+  const rigidBodyRef = useRef<any>(null);
+
+  useFrame((_, delta) => {
+    const currentExtrudedSvg = rigidBodyRef.current!;
+    const vec = new THREE.Vector3();
+
+    delta = Math.min(0.1, delta);
+
+    if (currentExtrudedSvg) {
+      currentExtrudedSvg.applyImpulse(
+        vec
+          .copy(currentExtrudedSvg.translation())
+          .negate()
+          .multiplyScalar(0.05)
+      );
+    }
+  });
+
   return (
     <RigidBody
+      ref={rigidBodyRef}
       colliders={colliderDefault}
       position={position}
+      linearDamping={7}
+      angularDamping={1}
+      friction={0.2}
     >
       <group>
         <Html
@@ -80,6 +105,15 @@ export function ExtrudedSvg({
                   },
                 ]}
               />
+              <meshPhysicalMaterial
+                clearcoat={1}
+                thickness={0.1}
+                // anisotropicBlur={0.1}
+                // chromaticAberration={0.1}
+                // samples={8}
+                // resolution={512}
+              />
+
               <meshPhongMaterial
                 attach="material"
                 color={svgData.paths[i].color}

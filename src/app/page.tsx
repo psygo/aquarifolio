@@ -1,32 +1,83 @@
 "use client";
 
-import { Suspense, useRef } from "react";
+import { Suspense } from "react";
 
-import { Portfolio2 } from "@components/Portfolio2";
-import * as THREE from "three";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import {
+  Environment,
+  Lightformer,
   OrbitControls,
-  Stars,
   Stats,
 } from "@react-three/drei";
+import { Physics } from "@react-three/rapier";
 import {
-  BallCollider,
-  Physics,
-  RigidBody,
-} from "@react-three/rapier";
+  Bloom,
+  EffectComposer,
+  N8AO,
+} from "@react-three/postprocessing";
+
 import { Perf } from "r3f-perf";
 
 import { Experience } from "@components/exports";
+import { Underlay } from "./components/Underlay";
 
 function Lighting() {
   return (
     <group>
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={0.4} />
       <spotLight
-        intensity={0.5}
-        position={[300, 300, 4000]}
+        position={[10, 10, 10]}
+        angle={0.15}
+        penumbra={1}
+        intensity={1}
+        castShadow
       />
+
+      <EffectComposer disableNormalPass multisampling={8}>
+        <N8AO
+          distanceFalloff={1}
+          aoRadius={1}
+          intensity={4}
+        />
+        <Bloom
+          mipmapBlur
+          luminanceThreshold={1}
+          radius={0.7}
+        />
+      </EffectComposer>
+
+      <Environment resolution={256}>
+        <group rotation={[-Math.PI / 3, 0, 1]}>
+          <Lightformer
+            form="circle"
+            intensity={4}
+            rotation-x={Math.PI / 2}
+            position={[0, 5, -9]}
+            scale={2}
+          />
+          <Lightformer
+            form="circle"
+            intensity={2}
+            rotation-y={Math.PI / 2}
+            position={[-5, 1, -1]}
+            scale={2}
+          />
+          <Lightformer
+            form="circle"
+            intensity={2}
+            rotation-y={Math.PI / 2}
+            position={[-5, -1, -1]}
+            scale={2}
+          />
+          <Lightformer
+            form="circle"
+            intensity={2}
+            rotation-y={-Math.PI / 2}
+            position={[10, 1, 0]}
+            scale={8}
+          />
+        </group>
+      </Environment>
     </group>
   );
 }
@@ -40,54 +91,19 @@ function Performance() {
   );
 }
 
-/**
- * From the [Lusion Connectors example](https://codesandbox.io/p/sandbox/lusion-connectors-xy8c8z?file=%2Fsrc%2FApp.js%3A97%2C15)
- */
-function Pointer({ vec = new THREE.Vector3() }) {
-  const ref = useRef<typeof RigidBody>(null);
-  useFrame(({ mouse, viewport }) => {
-    // @ts-ignore
-    ref.current?.setNextKinematicTranslation(
-      vec.set(
-        (mouse.x * viewport.width) / 2,
-        (mouse.y * viewport.height) / 2,
-        0
-      )
-    );
-  });
-  return (
-    <RigidBody
-      position={[0, 0, 0]}
-      type="kinematicPosition"
-      colliders={false}
-      // @ts-ignore
-      ref={ref}
-    >
-      <BallCollider args={[1]} />
-    </RigidBody>
-  );
-}
-
-// export default function Port() {
-//   return <Portfolio2/>
-// }
-
 export default function ThreePortfolio() {
   return (
     <main style={{ width: "100vw", height: "100vh" }}>
+      <Underlay />
       <Canvas camera={{ position: [25, 20, 3], fov: 75 }}>
         <Performance />
 
         <Lighting />
 
-        <color attach="background" args={["black"]} />
-        <Stars saturation={0} count={400} speed={0.5} />
-
         <OrbitControls />
 
         <Suspense>
-          <Physics debug>
-            {/* <Pointer /> */}
+          <Physics>
             <Experience />
           </Physics>
         </Suspense>

@@ -20,30 +20,15 @@ export function Underlay() {
           fontFamily: "'Antonio', sans-serif",
           flex: "1 1 0%",
           height: 30,
-          fontSize: 25,
+          fontSize: 50,
           fontWeight: "700",
           lineHeight: "30px",
-          color: "#ffb3b3",
+          color: "black",
           letterSpacing: -2,
         }}
       >
         <div style={{ marginBottom: "10px" }}>
-          Ha Huyen Tran
-        </div>
-        <div style={{ marginBottom: "10px" }}>
-          Nguyen Thi Tuyet Hanh
-        </div>
-        <div style={{ marginBottom: "10px" }}>
-          Le Ngoc My
-        </div>
-        <div style={{ marginBottom: "10px" }}>
-          Vo Thi Minh Thuy
-        </div>
-        <div style={{ marginBottom: "10px" }}>
-          Ngo Phuong Thuy
-        </div>
-        <div style={{ marginBottom: "10px" }}>
-          Do Thai Ha
+          Philippe Fanaro
         </div>
       </div>
 
@@ -64,12 +49,13 @@ export function Underlay() {
             justifyContent: "end",
             fontSize: 50,
             lineHeight: "1em",
-            color: "#ff6666",
+            color: "black",
             margin: 0,
+            marginRight: "30px",
             letterSpacing: 1,
           }}
         >
-          happy women&apos;s day
+          I build with stuff.
         </p>
       </div>
     </div>

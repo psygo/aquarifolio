@@ -36,10 +36,10 @@ export function Squircle({
   position?: [number, number, number];
 }) {
   const meshRef = useRef<THREE.Mesh>(null);
-  const rigidBodyMesh = useRef<any>(null);
+  const rigidBodyRef = useRef<any>(null);
 
   useFrame((_, delta) => {
-    const currentSquircle = rigidBodyMesh.current!;
+    const currentSquircle = rigidBodyRef.current!;
     const vec = new THREE.Vector3();
 
     delta = Math.min(0.1, delta);
@@ -49,26 +49,17 @@ export function Squircle({
         vec
           .copy(currentSquircle.translation())
           .negate()
-          .multiplyScalar(0.2)
-        // .copy(currentSquircle.translation())
-        // .normalize()
-        // .multiply(
-        //   new THREE.Vector3(
-        //     -50 * delta * 1,
-        //     -150 * delta * 1,
-        //     -50 * delta * 1
-        //   )
-        // )
+          .multiplyScalar(0.05)
       );
     }
   });
 
   return (
     <RigidBody
-      ref={rigidBodyMesh}
+      ref={rigidBodyRef}
       colliders="cuboid"
       position={position}
-      linearDamping={3.5}
+      linearDamping={7}
       angularDamping={0.8}
       friction={0.2}
     >
@@ -78,7 +69,7 @@ export function Squircle({
         position-y={1}
       >
         <meshPhysicalMaterial
-          metalness={0}
+          metalness={0.1}
           roughness={0.36}
           clearcoat={1}
           transmission={1}
