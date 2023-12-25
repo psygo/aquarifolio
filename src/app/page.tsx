@@ -1,6 +1,11 @@
 "use client";
 
-import { Suspense, useEffect, useRef } from "react";
+import {
+  Suspense,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
@@ -182,6 +187,38 @@ function Player() {
     );
   }
 
+  const [smoothedCameraPosition] = useState(
+    new THREE.Vector3(10, 10, 10)
+  );
+  const [smoothedCameraTarget] = useState(
+    new THREE.Vector3()
+  );
+
+  useFrame((state, delta) => {
+    if (playerRef) {
+      const bodyPosition =
+        playerRef.current!.translation() as THREE.Vector3;
+
+      const cameraPosition = new THREE.Vector3();
+      cameraPosition.copy(bodyPosition);
+      cameraPosition.z += 2.25;
+      cameraPosition.y += 2;
+
+      const cameraTarget = new THREE.Vector3();
+      cameraTarget.copy(bodyPosition);
+      cameraTarget.y += 0.25;
+
+      smoothedCameraPosition.lerp(
+        cameraPosition,
+        5 * delta
+      );
+      smoothedCameraTarget.lerp(cameraTarget, 5 * delta);
+
+      state.camera.position.copy(smoothedCameraPosition);
+      state.camera.lookAt(smoothedCameraTarget);
+    }
+  });
+
   useEffect(() => {
     const unsubscribeKeys = subscribeKeys(
       (state) => state.jump,
@@ -266,16 +303,15 @@ export default function Portfolio2() {
         ]}
       >
         <Canvas
-          camera={{
-            position: [25, 20, 3],
-            fov: 30,
-            zoom: 3,
-          }}
+        // camera={{
+        //   position: [25, 20, 3],
+        //   fov: 30,
+        //   zoom: 3,
+        // }}
         >
           <Performance />
 
-          <OrbitControls />
-
+          <Lighting />
           <Lighting2 />
 
           <Suspense>
