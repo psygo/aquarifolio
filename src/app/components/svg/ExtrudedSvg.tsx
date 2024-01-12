@@ -3,10 +3,7 @@ import { useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import { SVGLoader } from "three/examples/jsm/Addons.js";
 import { useFrame, useLoader } from "@react-three/fiber";
-import {
-  Html,
-  MeshTransmissionMaterial,
-} from "@react-three/drei";
+import { Html } from "@react-three/drei";
 import {
   RigidBody,
   RigidBodyAutoCollider,

@@ -10,11 +10,12 @@ import {
 import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
-  Environment,
+  Decal,
   KeyboardControls,
-  Lightformer,
   OrbitControls,
-  Stats,
+  PerspectiveCamera,
+  RenderTexture,
+  Text,
   useKeyboardControls,
 } from "@react-three/drei";
 import {
@@ -22,133 +23,18 @@ import {
   RapierRigidBody,
   RigidBody,
 } from "@react-three/rapier";
+
 import {
-  Bloom,
-  EffectComposer,
-  N8AO,
-} from "@react-three/postprocessing";
-
-import { Perf } from "r3f-perf";
-
-import { Experience } from "@components/exports";
-import { Underlay } from "./components/Underlay";
-
-function Lighting() {
-  return (
-    <group>
-      <ambientLight intensity={0.4} />
-      <spotLight
-        position={[10, 10, 10]}
-        angle={0.15}
-        penumbra={1}
-        intensity={1}
-        castShadow
-      />
-
-      <EffectComposer disableNormalPass multisampling={8}>
-        <N8AO
-          distanceFalloff={1}
-          aoRadius={1}
-          intensity={4}
-        />
-        <Bloom
-          mipmapBlur
-          luminanceThreshold={1}
-          radius={0.7}
-        />
-      </EffectComposer>
-
-      <Environment resolution={256}>
-        <group rotation={[-Math.PI / 3, 0, 1]}>
-          <Lightformer
-            form="circle"
-            intensity={4}
-            rotation-x={Math.PI / 2}
-            position={[0, 5, -9]}
-            scale={2}
-          />
-          <Lightformer
-            form="circle"
-            intensity={2}
-            rotation-y={Math.PI / 2}
-            position={[-5, 1, -1]}
-            scale={2}
-          />
-          <Lightformer
-            form="circle"
-            intensity={2}
-            rotation-y={Math.PI / 2}
-            position={[-5, -1, -1]}
-            scale={2}
-          />
-          <Lightformer
-            form="circle"
-            intensity={2}
-            rotation-y={-Math.PI / 2}
-            position={[10, 1, 0]}
-            scale={8}
-          />
-        </group>
-      </Environment>
-    </group>
-  );
-}
-
-function Performance() {
-  return (
-    <group>
-      <Perf />
-      <Stats />
-    </group>
-  );
-}
-
-// export default function ThreePortfolio() {
-//   return (
-//     <main style={{ width: "100vw", height: "100vh" }}>
-//       <Underlay />
-//       <Canvas camera={{ position: [25, 20, 3], fov: 75 }}>
-//         <Performance />
-
-//         <Lighting />
-
-//         <OrbitControls />
-
-//         <Suspense>
-//           <Physics>
-//             <Experience />
-//           </Physics>
-//         </Suspense>
-//       </Canvas>
-//     </main>
-//   );
-// }
-
-function Lighting2() {
-  return (
-    <group>
-      <directionalLight
-        castShadow
-        position={[4, 4, 1]}
-        intensity={1.5}
-        shadow-mapSize={[1024, 1024]}
-        shadow-camera-near={1}
-        shadow-camera-far={10}
-        shadow-camera-top={10}
-        shadow-camera-right={10}
-        shadow-camera-bottom={-10}
-        shadow-camera-left={-10}
-      />
-    </group>
-  );
-}
+  Lighting,
+  Performance,
+} from "./components/exports";
 
 const boxGeometry = new THREE.BoxGeometry(100, 1, 100);
 const floor1Material = new THREE.MeshStandardMaterial({
   color: "limegreen",
 });
 
-function BlockStart({
+function Floor({
   position = [0, 0, 0],
 }: {
   position?: [number, number, number];
@@ -162,16 +48,43 @@ function BlockStart({
         // rotation={[0, 0, 0]}
         // scale={[10, 0.2, 10]}
         receiveShadow
-      ></mesh>
+      >
+        <Decal
+          position={[0, 0, 0.75]}
+          rotation={[-0.4, Math.PI, 0]}
+          scale={[0.9, 0.25, 1]}
+        >
+          <meshStandardMaterial
+            roughness={0.6}
+            transparent
+            polygonOffset
+            polygonOffsetFactor={-10}
+          >
+            <RenderTexture attach="map" anisotropy={16}>
+              <PerspectiveCamera
+                makeDefault
+                manual
+                aspect={0.9 / 0.25}
+                position={[0, 0, 5]}
+              />
+              <color
+                attach="background"
+                args={["#af2040"]}
+              />
+              <ambientLight intensity={0.5} />
+              <directionalLight position={[10, 10, 5]} />
+              <Text
+                rotation={[0, Math.PI, 0]}
+                fontSize={200}
+                color="white"
+              >
+                Hello from Drei
+              </Text>
+            </RenderTexture>
+          </meshStandardMaterial>
+        </Decal>
+      </mesh>
     </RigidBody>
-  );
-}
-
-function Level() {
-  return (
-    <group>
-      <BlockStart />
-    </group>
   );
 }
 
@@ -196,26 +109,22 @@ function Player() {
 
   useFrame((state, delta) => {
     if (playerRef) {
-      const bodyPosition =
-        playerRef.current!.translation() as THREE.Vector3;
-
-      const cameraPosition = new THREE.Vector3();
-      cameraPosition.copy(bodyPosition);
-      cameraPosition.z += 2.25;
-      cameraPosition.y += 2;
-
-      const cameraTarget = new THREE.Vector3();
-      cameraTarget.copy(bodyPosition);
-      cameraTarget.y += 0.25;
-
-      smoothedCameraPosition.lerp(
-        cameraPosition,
-        5 * delta
-      );
-      smoothedCameraTarget.lerp(cameraTarget, 5 * delta);
-
-      state.camera.position.copy(smoothedCameraPosition);
-      state.camera.lookAt(smoothedCameraTarget);
+      // const bodyPosition =
+      //   playerRef.current!.translation() as THREE.Vector3;
+      // const cameraPosition = new THREE.Vector3();
+      // cameraPosition.copy(bodyPosition);
+      // cameraPosition.z += 2.25;
+      // cameraPosition.y += 2;
+      // const cameraTarget = new THREE.Vector3();
+      // cameraTarget.copy(bodyPosition);
+      // cameraTarget.y += 0.25;
+      // smoothedCameraPosition.lerp(
+      //   cameraPosition,
+      //   5 * delta
+      // );
+      // smoothedCameraTarget.lerp(cameraTarget, 5 * delta);
+      // state.camera.position.copy(smoothedCameraPosition);
+      // state.camera.lookAt(smoothedCameraTarget);
     }
   });
 
@@ -303,20 +212,31 @@ export default function Portfolio2() {
         ]}
       >
         <Canvas
-        // camera={{
-        //   position: [25, 20, 3],
-        //   fov: 30,
-        //   zoom: 3,
-        // }}
+          camera={{
+            position: [25, 20, 3],
+            fov: 30,
+            zoom: 3,
+          }}
         >
+          <OrbitControls />
           <Performance />
 
           <Lighting />
-          <Lighting2 />
 
           <Suspense>
             <Physics debug>
-              <Level />
+              <mesh position={[0, 2, 0]}>
+                <dodecahedronGeometry args={[0.75]} />
+                <meshStandardMaterial />
+                <Decal
+                  position={[0, -0.2, 0.5]}
+                  scale={0.75}
+                  // map-anisotropy={16}
+                >
+                  <Text color="black">hello</Text>
+                </Decal>
+              </mesh>
+              <Floor />
               <Player />
             </Physics>
           </Suspense>
