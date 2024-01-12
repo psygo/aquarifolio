@@ -4,7 +4,7 @@ import { Suspense } from "react";
 
 import { Canvas } from "@react-three/fiber";
 import {
-  Decal,
+  Html,
   KeyboardControls,
   OrbitControls,
   Text,
@@ -15,8 +15,8 @@ import {
   Floor,
   Lighting,
   Performance,
+  Player,
 } from "./components/exports";
-import { Player } from "./components/Player";
 
 export default function ThreePortfolio() {
   return (
@@ -36,7 +36,7 @@ export default function ThreePortfolio() {
         <Canvas
           camera={{
             position: [25, 20, 3],
-            fov: 30,
+            fov: 10,
             zoom: 3,
           }}
         >
@@ -46,19 +46,24 @@ export default function ThreePortfolio() {
           <Lighting />
 
           <Suspense>
+            <Text
+              position={[0, 0.3, 0]}
+              rotation={[Math.PI / 2, Math.PI, 0]}
+            >
+              Hello Text
+            </Text>
             <Physics debug>
-              <mesh position={[0, 2, 0]}>
-                <dodecahedronGeometry args={[0.75]} />
-                <meshStandardMaterial />
-                <Decal
-                  position={[0, -0.2, 0.5]}
-                  scale={0.75}
-                  // map-anisotropy={16}
-                >
-                  <Text color="black">hello</Text>
-                </Decal>
-              </mesh>
-
+              <Html
+                position={[0, 0.3, 0]}
+                scale={0.2}
+                transform
+                rotation={[Math.PI / 2, Math.PI, 0]}
+              >
+                <h1 style={{ color: "white" }}>
+                  Hello There!
+                </h1>
+                <p>My name is Philippe Fanaro</p>
+              </Html>
               <Floor />
               <Player />
             </Physics>
