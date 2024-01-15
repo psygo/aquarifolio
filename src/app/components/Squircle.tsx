@@ -38,7 +38,6 @@ export function Squircle({
   return (
     <mesh
       geometry={squircleGeometry}
-      position-y={1}
       position={position}
     >
       <meshPhysicalMaterial
@@ -52,14 +51,23 @@ export function Squircle({
     </mesh>
   )
 }
-export function FloatingSquircle() {
+export function FloatingSquircles() {
   return (
-    <Float
-      rotationIntensity={2}
-      floatIntensity={10}
-      speed={4}
-    >
-      <Squircle />
-    </Float>
+    <group>
+      <Float
+        rotationIntensity={2}
+        floatIntensity={10}
+        speed={4}
+      >
+        <Squircle />
+      </Float>
+      <Float
+        rotationIntensity={2}
+        floatIntensity={10}
+        speed={4}
+      >
+        <Squircle position={[4, 0, -3]} />
+      </Float>
+    </group>
   )
 }

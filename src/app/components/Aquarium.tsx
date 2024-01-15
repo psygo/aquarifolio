@@ -54,7 +54,6 @@ export function Aquarium({
       </mesh>
       <group ref={ref}>
         <AquariumInternalLighting />
-
         {children}
       </group>
     </group>
@@ -64,7 +63,7 @@ export function Aquarium({
 function AquariumInternalLighting() {
   return (
     <group>
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={0.75} />
       <spotLight
         intensity={0.5}
         position={[300, 300, 4000]}

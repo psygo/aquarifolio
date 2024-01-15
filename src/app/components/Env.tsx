@@ -2,6 +2,7 @@ import {
   AccumulativeShadows,
   Environment,
   Lightformer,
+  Plane,
   RandomizedLight,
 } from "@react-three/drei"
 
@@ -9,6 +10,7 @@ export function Env() {
   return (
     <>
       <color attach="background" args={["#c6e5db"]} />
+
       <AccumulativeShadows
         temporal
         frames={100}
@@ -28,7 +30,7 @@ export function Env() {
         />
       </AccumulativeShadows>
 
-      <Environment resolution={1024}>
+      <Environment preset="city" resolution={1024}>
         <group rotation={[-Math.PI / 3, 0, 0]}>
           <Lightformer
             intensity={4}

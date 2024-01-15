@@ -69,7 +69,7 @@ const circlesParams: CircleProps[] = [
     position: [-4, -2, -3],
   },
   {
-    scale: 2,
+    scale: 1,
     color: CssColors.pink,
     speed: 0.3,
     position: [-4, 2, -4],

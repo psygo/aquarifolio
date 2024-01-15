@@ -5,12 +5,13 @@ import { SVGLoader } from "three/examples/jsm/Addons.js"
 import { useLoader } from "@react-three/fiber"
 import { Float } from "@react-three/drei"
 
-import { Position } from "./utils"
+import { Position, Rotation } from "./utils"
 
 //----------------------------------------------------------
 
 type ExtrudedSvgProps = {
   filename: string
+  rotation?: Rotation
   depth?: number
   scale?: number
   position?: Position
@@ -18,9 +19,10 @@ type ExtrudedSvgProps = {
 
 export function ExtrudedSvg({
   filename,
+  rotation = [0, 0, 0],
   depth = 5,
   scale = 1,
-  position = [-10, 10, 0],
+  position = [0, 0, 0],
 }: ExtrudedSvgProps) {
   const svgData = useLoader(SVGLoader, filename)
   const shapes = useMemo(
@@ -29,7 +31,11 @@ export function ExtrudedSvg({
   )
 
   return (
-    <mesh scale={scale} position={position}>
+    <mesh
+      scale={scale}
+      rotation={rotation}
+      position={position}
+    >
       {shapes.map((s, i) => (
         <mesh key={i}>
           <extrudeGeometry
@@ -61,8 +67,8 @@ export function FanaroIoLogo() {
   return (
     <ExtrudedSvg
       filename="fanaro.io.svg"
-      scale={0.1}
-      position={[-2, 2, 0]}
+      scale={0.2}
+      position={[4, 2, 0]}
     />
   )
 }
@@ -71,9 +77,10 @@ export function FicLogo() {
   return (
     <ExtrudedSvg
       filename="fic.svg"
-      scale={0.01}
+      rotation={[-Math.PI, 0, 0]}
+      scale={0.025}
       depth={40}
-      position={[1, 10, 2]}
+      position={[-1, 1, 4]}
     />
   )
 }
@@ -84,7 +91,8 @@ export function GithubLogo() {
       filename="github.svg"
       scale={0.01}
       depth={20}
-      position={[-3, 12, 0]}
+      position={[-3, -1, -3]}
+      rotation={[-Math.PI, 0, 0]}
     />
   )
 }
@@ -95,7 +103,7 @@ export function NextjsLogo() {
       filename="next.js.svg"
       scale={0.005}
       depth={20}
-      position={[0, 21, 0]}
+      position={[0, -1, -3]}
     />
   )
 }
@@ -117,7 +125,7 @@ export function ThreejsLogo() {
       filename="three.js.svg"
       scale={0.01}
       depth={30}
-      position={[-3, 15, 0]}
+      position={[-3, -1, -3]}
     />
   )
 }
@@ -128,7 +136,7 @@ export function YtKbdNavLogo() {
       filename="yt_kbd_nav.svg"
       scale={0.01}
       depth={40}
-      position={[1, 17, -2]}
+      position={[-1, 3, -2]}
     />
   )
 }
@@ -141,6 +149,20 @@ export function FloatingLogos() {
         floatIntensity={10}
         speed={4}
       >
+        <FanaroIoLogo />
+      </Float>
+      <Float
+        rotationIntensity={2}
+        floatIntensity={10}
+        speed={4}
+      >
+        <FicLogo />
+      </Float>
+      <Float
+        rotationIntensity={2}
+        floatIntensity={10}
+        speed={4}
+      >
         <ReactLogo />
       </Float>
       <Float
@@ -148,8 +170,29 @@ export function FloatingLogos() {
         floatIntensity={10}
         speed={4}
       >
-        <FanaroIoLogo />
+        <GithubLogo />
       </Float>
+      <Float
+        rotationIntensity={2}
+        floatIntensity={10}
+        speed={4}
+      >
+        <NextjsLogo />
+      </Float>
+      <Float
+        rotationIntensity={2}
+        floatIntensity={10}
+        speed={4}
+      >
+        <ThreejsLogo />
+      </Float>
+      {/* <Float
+        rotationIntensity={2}
+        floatIntensity={10}
+        speed={4}
+      >
+        <YtKbdNavLogo />
+      </Float> */}
     </group>
   )
 }
