@@ -5,7 +5,7 @@ import { SVGLoader } from "three/examples/jsm/Addons.js"
 import { useLoader } from "@react-three/fiber"
 import { Float } from "@react-three/drei"
 
-export type Position = [number, number, number]
+import { Position } from "./utils"
 
 //----------------------------------------------------------
 

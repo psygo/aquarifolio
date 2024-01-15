@@ -1,3 +1,4 @@
+import { Float } from "@react-three/drei"
 import React from "react"
 
 import * as THREE from "three"
@@ -49,5 +50,16 @@ export function Squircle({
         thickness={5}
       />
     </mesh>
+  )
+}
+export function FloatingSquircle() {
+  return (
+    <Float
+      rotationIntensity={2}
+      floatIntensity={10}
+      speed={4}
+    >
+      <Squircle />
+    </Float>
   )
 }

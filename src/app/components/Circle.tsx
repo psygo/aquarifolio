@@ -1,3 +1,4 @@
+import { Vector3 } from "three"
 import {
   Float,
   Instance,
@@ -8,13 +9,14 @@ export type CircleProps = {
   position: number[] | THREE.Vector3
   scale: number
   speed: number
-  color: string
+  color: CssColors
 }
+
 export function Circle({
   position,
   scale = 1,
   speed = 0.1,
-  color = "white",
+  color = CssColors.white,
 }: CircleProps) {
   return (
     <Float
@@ -23,8 +25,7 @@ export function Circle({
       speed={speed / 2}
     >
       <Instance
-        // @ts-ignore
-        position={position}
+        position={position as Vector3}
         scale={scale}
         color={color}
       />
@@ -32,18 +33,88 @@ export function Circle({
   )
 }
 
+enum CssColors {
+  white = "white",
+  orange = "orange",
+  hotpink = "hotpink",
+  aquamarine = "aquamarine",
+  lightblue = "lightblue",
+  pink = "pink",
+  skyblue = "skyblue",
+}
+
 const circlesParams: CircleProps[] = [
   {
     scale: 1,
-    color: "orange",
+    color: CssColors.orange,
     speed: 0.05,
     position: [-4, -1, -1],
   },
   {
     scale: 0.75,
-    color: "hotpink",
+    color: CssColors.hotpink,
     speed: 0.1,
     position: [-4, -2, -2],
+  },
+  {
+    scale: 1.25,
+    color: CssColors.aquamarine,
+    speed: 0.2,
+    position: [4, -3, 2],
+  },
+  {
+    scale: 1.5,
+    color: CssColors.lightblue,
+    speed: 0.3,
+    position: [-4, -2, -3],
+  },
+  {
+    scale: 2,
+    color: CssColors.pink,
+    speed: 0.3,
+    position: [-4, 2, -4],
+  },
+  {
+    scale: 2,
+    color: CssColors.skyblue,
+    speed: 0.3,
+    position: [-4, 2, -4],
+  },
+  {
+    scale: 1.4,
+    color: CssColors.orange,
+    speed: 0.05,
+    position: [-4, -1, -1],
+  },
+  {
+    scale: 2,
+    color: CssColors.hotpink,
+    speed: 0.1,
+    position: [-4, 2, -2],
+  },
+  {
+    scale: 1.5,
+    color: CssColors.aquamarine,
+    speed: 0.2,
+    position: [-4, -3, 2],
+  },
+  {
+    scale: 1.25,
+    color: CssColors.lightblue,
+    speed: 0.3,
+    position: [-4, -2, -3],
+  },
+  {
+    scale: 1,
+    color: CssColors.pink,
+    speed: 0.3,
+    position: [-4, 2, -4],
+  },
+  {
+    scale: 1,
+    color: CssColors.skyblue,
+    speed: 0.3,
+    position: [-4, 2, -4],
   },
 ]
 
@@ -52,6 +123,7 @@ export function Circles() {
     <Instances renderOrder={-1000}>
       <sphereGeometry args={[1, 64, 64]} />
       <meshBasicMaterial depthTest={false} />
+
       {circlesParams.map(
         ({ scale, color, speed, position }, index) => (
           <Circle

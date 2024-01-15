@@ -1,4 +1,6 @@
+export * from "./Aquarium"
 export * from "./Circle"
+export * from "./Env"
 export * from "./ExtrudedSvg"
 export * from "./Performance"
 export * from "./Squircle"
