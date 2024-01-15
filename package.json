@@ -23,19 +23,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-spring/three": "^9.7.3",
     "@react-three/drei": "^9.92.5",
     "@react-three/fiber": "^8.15.12",
-    "@react-three/postprocessing": "^2.15.11",
-    "@react-three/rapier": "^1.2.1",
     "@types/three": "^0.159.0",
-    "@use-gesture/react": "^10.3.0",
-    "leva": "^0.9.35",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
-    "three": "^0.159.0",
-    "three-stdlib": "^2.29.1"
+    "three": "^0.159.0"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -43,6 +37,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
+    "leva": "^0.9.35",
     "r3f-perf": "^7.1.2",
     "typescript": "^5"
   }
