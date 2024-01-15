@@ -15,29 +15,27 @@ import {
   Performance,
   Title,
 } from "./components/exports"
-import Head from "next/head"
 
 export default function App() {
   return (
-    <>
-      <main style={{ width: "100vw", height: "100vh" }}>
-        <Canvas shadows camera={{ position: [16, 9, 9] }}>
-          <Suspense fallback={null}>
-            <Performance />
-            <Env />
-            <OrbitControls />
+    <main style={{ width: "100vw", height: "100vh" }}>
+      <Loader />
+      <Overlay />
 
-            <Title />
-            <Aquarium position={[0, 0.25, 0]}>
-              <FloatingLogos />
-              <FloatingSquircles />
-              <Circles />
-            </Aquarium>
-          </Suspense>
-        </Canvas>
-        <Overlay />
-        <Loader />
-      </main>
-    </>
+      <Canvas shadows camera={{ position: [16, 9, 9] }}>
+        <Suspense fallback={null}>
+          <Performance />
+          <Env />
+          <OrbitControls />
+
+          <Title />
+          <Aquarium position={[0, 0.25, 0]}>
+            <FloatingLogos />
+            <FloatingSquircles />
+            <Circles />
+          </Aquarium>
+        </Suspense>
+      </Canvas>
+    </main>
   )
 }
