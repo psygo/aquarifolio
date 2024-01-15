@@ -20,9 +20,16 @@ export default function App() {
   return (
     <main style={{ width: "100vw", height: "100vh" }}>
       <Loader />
-      <Overlay />
 
-      <Canvas shadows camera={{ position: [16, 9, 9] }}>
+      <Canvas
+        shadows
+        camera={{
+          position: [30, 0, -3],
+          fov: 35,
+          near: 1,
+          far: 50,
+        }}
+      >
         <Suspense fallback={null}>
           <Performance />
           <Env />
@@ -36,6 +43,8 @@ export default function App() {
           </Aquarium>
         </Suspense>
       </Canvas>
+
+      <Overlay />
     </main>
   )
 }

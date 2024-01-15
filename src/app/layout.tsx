@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import Head from "next/head"
 import { Inter } from "next/font/google"
 
+import "./base.css"
+
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
@@ -21,7 +23,7 @@ export default function RootLayout({
       </Head>
 
       <body
-        style={{ margin: 0 }}
+        style={{ margin: 0, background: "#c6e5db" }}
         className={inter.className}
       >
         {children}

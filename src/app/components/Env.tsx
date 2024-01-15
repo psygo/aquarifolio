@@ -1,8 +1,8 @@
 import {
   AccumulativeShadows,
+  CameraControls,
   Environment,
   Lightformer,
-  Plane,
   RandomizedLight,
 } from "@react-three/drei"
 
@@ -30,7 +30,7 @@ export function Env() {
         />
       </AccumulativeShadows>
 
-      <Environment preset="forest" resolution={1024}>
+      <Environment preset="city" resolution={1024}>
         <group rotation={[-Math.PI / 3, 0, 0]}>
           <Lightformer
             intensity={4}
@@ -62,6 +62,13 @@ export function Env() {
           />
         </group>
       </Environment>
+
+      <CameraControls
+        truckSpeed={0}
+        dollySpeed={0}
+        minPolarAngle={0}
+        maxPolarAngle={Math.PI / 2}
+      />
     </>
   )
 }

@@ -145,42 +145,42 @@ export function FloatingLogos() {
       <Float
         rotationIntensity={2}
         floatIntensity={10}
-        speed={4}
+        speed={2}
       >
         <FanaroIoLogo />
       </Float>
       <Float
         rotationIntensity={2}
         floatIntensity={10}
-        speed={4}
+        speed={2}
       >
         <FicLogo />
       </Float>
       <Float
         rotationIntensity={2}
         floatIntensity={10}
-        speed={4}
+        speed={2}
       >
         <ReactLogo />
       </Float>
       <Float
         rotationIntensity={2}
         floatIntensity={10}
-        speed={4}
+        speed={2}
       >
         <GithubLogo />
       </Float>
       <Float
         rotationIntensity={2}
         floatIntensity={10}
-        speed={4}
+        speed={2}
       >
         <NextjsLogo />
       </Float>
       <Float
         rotationIntensity={2}
         floatIntensity={10}
-        speed={4}
+        speed={2}
       >
         <ThreejsLogo />
       </Float>
