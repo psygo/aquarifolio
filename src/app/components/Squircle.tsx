@@ -1,8 +1,6 @@
-import React, { useRef } from "react"
+import React from "react"
 
 import * as THREE from "three"
-import { RigidBody } from "@react-three/rapier"
-import { useFrame } from "@react-three/fiber"
 
 function generateSquircle(n: number) {
   const g = new THREE.OctahedronGeometry(1, 16)
@@ -27,44 +25,17 @@ function generateSquircle(n: number) {
 
 const squircleGeometry = generateSquircle(2)
 
+type SquircleProps = {
+  position?: [number, number, number]
+}
 /**
  * Source: [SB Code - Squircle](https://editor.sbcode.net/35094a3db3ace7db06731a7c540a7d2db45d0dfa)
  */
 export function Squircle({
   position = [-2, -2, 0],
-}: {
-  position?: [number, number, number]
-}) {
-  // const meshRef = useRef<THREE.Mesh>(null);
-  // const rigidBodyRef = useRef<any>(null);
-
-  // useFrame((_, delta) => {
-  //   const currentSquircle = rigidBodyRef.current!;
-  //   const vec = new THREE.Vector3();
-
-  //   delta = Math.min(0.1, delta);
-
-  //   if (currentSquircle) {
-  //     currentSquircle.applyImpulse(
-  //       vec
-  //         .copy(currentSquircle.translation())
-  //         .negate()
-  //         .multiplyScalar(0.05)
-  //     );
-  //   }
-  // });
-
+}: SquircleProps) {
   return (
-    // <RigidBody
-    //   ref={rigidBodyRef}
-    //   colliders="cuboid"
-    //   position={position}
-    //   linearDamping={7}
-    //   angularDamping={0.8}
-    //   friction={0.2}
-    // >
     <mesh
-      // ref={meshRef}
       geometry={squircleGeometry}
       position-y={1}
       position={position}
@@ -78,6 +49,5 @@ export function Squircle({
         thickness={5}
       />
     </mesh>
-    // </RigidBody>
   )
 }

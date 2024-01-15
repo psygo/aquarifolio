@@ -1,5 +1,7 @@
 "use client"
 
+import { useLayoutEffect, useRef } from "react"
+
 import * as THREE from "three"
 import { Canvas } from "@react-three/fiber"
 import {
@@ -16,42 +18,15 @@ import {
   Instances,
   OrbitControls,
 } from "@react-three/drei"
-import { useLayoutEffect, useRef } from "react"
+
 import {
-  FanaroIoLogo,
-  FicLogo,
-  ReactLogo,
+  Circle,
+  CircleProps,
+  Circles,
+  FloatingLogos,
+  Performance,
   Squircle,
-} from "./components/svg/exports"
-
-type SphereProps = {
-  position: number[] | THREE.Vector3
-  scale: number
-  speed: number
-  color: string
-}
-
-function Sphere({
-  position,
-  scale = 1,
-  speed = 0.1,
-  color = "white",
-}: SphereProps) {
-  return (
-    <Float
-      rotationIntensity={40}
-      floatIntensity={20}
-      speed={speed / 2}
-    >
-      <Instance
-        // @ts-ignore
-        position={position}
-        scale={scale}
-        color={color}
-      />
-    </Float>
-  )
-}
+} from "./components/exports"
 
 function Aquarium({ children, ...props }: any) {
   const ref = useRef()
@@ -95,21 +70,6 @@ function Aquarium({ children, ...props }: any) {
 }
 
 export default function App() {
-  const spheres: SphereProps[] = [
-    {
-      scale: 1,
-      color: "orange",
-      speed: 0.05,
-      position: [-4, -1, -1],
-    },
-    {
-      scale: 0.75,
-      color: "hotpink",
-      speed: 0.1,
-      position: [-4, -2, -2],
-    },
-  ]
-
   return (
     <main style={{ width: "100vw", height: "100vh" }}>
       <Canvas
@@ -118,6 +78,8 @@ export default function App() {
         camera={{ position: [10, 20, 20], zoom: 80 }}
         gl={{ preserveDrawingBuffer: true }}
       >
+        <Performance />
+
         <color attach="background" args={["#c6e5db"]} />
 
         <Aquarium position={[0, 0.25, 0]}>
@@ -129,48 +91,16 @@ export default function App() {
             />
           </group>
 
-          <group>
-            <Float
-              rotationIntensity={2}
-              floatIntensity={10}
-              speed={4}
-            >
-              <ReactLogo />
-            </Float>
-            <Float
-              rotationIntensity={2}
-              floatIntensity={10}
-              speed={4}
-            >
-              <FanaroIoLogo />
-            </Float>
-            <Float
-              rotationIntensity={2}
-              floatIntensity={10}
-              speed={4}
-            >
-              <Squircle />
-            </Float>
-          </group>
+          <FloatingLogos />
+          <Float
+            rotationIntensity={2}
+            floatIntensity={10}
+            speed={4}
+          >
+            <Squircle />
+          </Float>
 
-          <Instances renderOrder={-1000}>
-            <sphereGeometry args={[1, 64, 64]} />
-            <meshBasicMaterial depthTest={false} />
-            {spheres.map(
-              (
-                { scale, color, speed, position },
-                index
-              ) => (
-                <Sphere
-                  key={index}
-                  scale={scale}
-                  color={color}
-                  speed={speed}
-                  position={position}
-                />
-              )
-            )}
-          </Instances>
+          <Circles />
         </Aquarium>
 
         {/* <CameraControls
