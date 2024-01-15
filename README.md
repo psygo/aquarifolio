@@ -11,17 +11,6 @@ My portfolio, done with [Three.js](https://threejs.org/).
   - [Drei](https://github.com/pmndrs/drei)
   - [React Three Rapier](https://github.com/pmndrs/react-three-rapier), a physics engine for Three.js
 
-## Tasks
-
-- [x] Extruded SVG Physics
-- [x] Add performance tracking
-- [ ] Logos as Objects with HTML
-- [ ] Go GLTF Model
-- [ ] Add other random, interesting objects
-- [ ] Grabbable Objects
-- [ ] Intro 3D Text, like [this](https://youtu.be/jIkn9dLBfNc)
-- [ ] Portal Entrance like in the beginning of [this video](https://youtu.be/2W_VR92Pqgs)
-
 ## References
 
 - A lot of my learning is done through my [three-lab repository](https://github.com/psygo/three-lab).
@@ -31,6 +20,7 @@ My portfolio, done with [Three.js](https://threejs.org/).
   - [Color Grading](https://codesandbox.io/p/sandbox/color-grading-wvgxp?file=%2Fsrc%2FApp.js)
   - [React Ellipse Curve](https://codesandbox.io/p/sandbox/react-ellipsecurve-xzi6ps?file=%2Fsrc%2FApp.js)
   - [Portals](https://codesandbox.io/p/sandbox/portals-ik11ln?file=%2Fsrc%2FApp.js)
+- [Aquarium](https://codesandbox.io/p/sandbox/aquarium-n7jf0f?file=%2Fsrc%2Findex.js%3A33%2C31)
 - [Wawa Sensei's YouTube Channel](https://www.youtube.com/@WawaSensei)
 - [Poimandres Open Source Collective](https://github.com/pmndrs)
 - 3D HTML:
