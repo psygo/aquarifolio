@@ -5,16 +5,14 @@ import { SVGLoader } from "three/examples/jsm/Addons.js"
 import { useLoader } from "@react-three/fiber"
 import { Float } from "@react-three/drei"
 
-import { Position, Rotation } from "./utils"
+import { WithPositionAndRotation } from "./utils"
 
 //----------------------------------------------------------
 
-type ExtrudedSvgProps = {
+type ExtrudedSvgProps = WithPositionAndRotation & {
   filename: string
-  rotation?: Rotation
   depth?: number
   scale?: number
-  position?: Position
 }
 
 export function ExtrudedSvg({

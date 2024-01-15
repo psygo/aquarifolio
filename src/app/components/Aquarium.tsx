@@ -14,6 +14,9 @@ type AquariumProps = {
   children: ReactNode
 }
 
+/**
+ * Reference: [@drcmda - Aquarium](https://codesandbox.io/p/sandbox/aquarium-n7jf0f?file=%2Fsrc%2FApp.js%3A13%2C26)
+ */
 export function Aquarium({
   children,
   position = [0, 0, 0],

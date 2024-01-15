@@ -30,7 +30,7 @@ export function Env() {
         />
       </AccumulativeShadows>
 
-      <Environment preset="city" resolution={1024}>
+      <Environment preset="forest" resolution={1024}>
         <group rotation={[-Math.PI / 3, 0, 0]}>
           <Lightformer
             intensity={4}
