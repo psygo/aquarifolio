@@ -65,8 +65,9 @@ export function FanaroIoLogo() {
   return (
     <ExtrudedSvg
       filename="fanaro.io.svg"
-      scale={0.2}
-      position={[4, 2, 0]}
+      scale={0.125}
+      position={[4, 2, -1]}
+      rotation={[-Math.PI, Math.PI / 2, 0]}
     />
   )
 }
@@ -75,10 +76,10 @@ export function FicLogo() {
   return (
     <ExtrudedSvg
       filename="fic.svg"
-      rotation={[-Math.PI, 0, 0]}
-      scale={0.025}
+      rotation={[-Math.PI, Math.PI / 2, 0]}
+      scale={0.02}
       depth={40}
-      position={[-1, 1, 4]}
+      position={[-1, 3, 2]}
     />
   )
 }
@@ -87,10 +88,10 @@ export function GithubLogo() {
   return (
     <ExtrudedSvg
       filename="github.svg"
-      scale={0.01}
+      scale={0.015}
       depth={20}
       position={[-3, -1, -3]}
-      rotation={[-Math.PI, 0, 0]}
+      rotation={[-Math.PI, -Math.PI / 2, 0]}
     />
   )
 }
@@ -112,7 +113,8 @@ export function ReactLogo() {
       filename="react.svg"
       scale={0.005}
       depth={50}
-      position={[1, -2, 0]}
+      position={[1, 3, 2]}
+      rotation={[-Math.PI, -Math.PI / 2, 0]}
     />
   )
 }
