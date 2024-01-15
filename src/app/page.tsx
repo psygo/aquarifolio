@@ -13,7 +13,6 @@ import {
   FloatingSquircles,
   Overlay,
   Performance,
-  Title,
 } from "./components/exports"
 
 export default function App() {
@@ -35,7 +34,6 @@ export default function App() {
           <Env />
           <OrbitControls />
 
-          {/* <Title /> */}
           <Aquarium position={[0, 0.25, 0]}>
             <FloatingLogos />
             <FloatingSquircles />
