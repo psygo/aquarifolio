@@ -10,7 +10,7 @@ export function FicLogo() {
       filename="fic.svg"
       scale={0.01}
       depth={40}
-      position={[1, 17, 2]}
+      position={[1, 10, 2]}
     />
   );
 }

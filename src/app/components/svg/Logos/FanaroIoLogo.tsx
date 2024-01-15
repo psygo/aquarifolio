@@ -5,7 +5,7 @@ export function FanaroIoLogo() {
     <ExtrudedSvg
       filename="fanaro.io.svg"
       scale={0.1}
-      position={[-5, 10, 0]}
+      position={[-2, 2, 0]}
     />
   );
 }
