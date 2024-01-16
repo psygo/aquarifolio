@@ -111,7 +111,7 @@ export function ReactLogo() {
   return (
     <ExtrudedSvg
       filename="react.svg"
-      scale={0.005}
+      scale={0.01}
       depth={50}
       position={[1, 3, 2]}
       rotation={[-Math.PI, -Math.PI / 2, 0]}
@@ -158,13 +158,13 @@ export function FloatingLogos() {
       >
         <FicLogo />
       </Float>
-      <Float
+      {/* <Float
         rotationIntensity={2}
         floatIntensity={10}
         speed={2}
       >
         <ReactLogo />
-      </Float>
+      </Float> */}
       <Float
         rotationIntensity={2}
         floatIntensity={10}

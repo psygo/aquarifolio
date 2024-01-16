@@ -3,7 +3,7 @@
 import { Suspense } from "react"
 
 import { Canvas } from "@react-three/fiber"
-import { Loader, OrbitControls } from "@react-three/drei"
+import { Loader } from "@react-three/drei"
 
 import {
   Aquarium,
@@ -13,6 +13,7 @@ import {
   FloatingSquircles,
   Overlay,
   Performance,
+  ReactAtom,
 } from "./components/exports"
 
 export default function App() {
@@ -31,6 +32,7 @@ export default function App() {
           {/* <Performance /> */}
 
           <Aquarium position={[0, 0.25, 0]}>
+            <ReactAtom />
             <FloatingLogos />
             <FloatingSquircles />
             <Circles />

@@ -39,32 +39,16 @@ export function Overlay() {
         <a
           style={{
             position: "absolute",
-            bottom: 12,
-            right: 36.5,
-            pointerEvents: "auto",
-          }}
-          href="https://github.com/psygo"
-        >
-          <Image
-            src="github.svg"
-            width={16}
-            height={16}
-            alt="@psygo Github"
-          />
-        </a>
-        <a
-          style={{
-            position: "absolute",
-            bottom: 12,
-            right: 60,
+            bottom: 10,
+            right: 70,
             pointerEvents: "auto",
           }}
           href="https://www.linkedin.com/in/philippe-fanaro/?locale=en_US"
         >
           <Image
             src="linkedin.svg"
-            width={16}
-            height={16}
+            width={20}
+            height={20}
             alt="Philippe Fanaro on LinkedIn"
           />
         </a>
@@ -72,6 +56,22 @@ export function Overlay() {
           style={{
             position: "absolute",
             bottom: 10,
+            right: 41,
+            pointerEvents: "auto",
+          }}
+          href="https://github.com/psygo"
+        >
+          <Image
+            src="github.svg"
+            width={20}
+            height={20}
+            alt="@psygo Github"
+          />
+        </a>
+        <a
+          style={{
+            position: "absolute",
+            bottom: 8,
             right: 10,
             pointerEvents: "auto",
           }}
@@ -79,8 +79,8 @@ export function Overlay() {
         >
           <Image
             src="fanaro.io.svg"
-            width={20}
-            height={20}
+            width={23}
+            height={23}
             alt="fanaro.io logo"
           />
         </a>
