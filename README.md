@@ -2,6 +2,8 @@
 
 My portfolio, done with [Three.js](https://threejs.org/).
 
+<img alt="three.js portfolio screenshot" width="400px" src="Portfolio_Screenshot.png"/>
+
 ## What am I using?
 
 - [NextJS](https://nextjs.org/)
