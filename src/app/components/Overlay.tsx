@@ -43,7 +43,7 @@ export function Overlay() {
         href="https://github.com/psygo"
       >
         <Image
-          src="github.svg"
+          src="/nextjs-github-pages/github.svg"
           width={16}
           height={16}
           alt="@psygo Github"
@@ -59,7 +59,7 @@ export function Overlay() {
         href="https://www.linkedin.com/in/philippe-fanaro/?locale=en_US"
       >
         <Image
-          src="linkedin.svg"
+          src="/nextjs-github-pages/linkedin.svg"
           width={16}
           height={16}
           alt="Philippe Fanaro on LinkedIn"
@@ -75,7 +75,7 @@ export function Overlay() {
         href="https://fanaro.io"
       >
         <Image
-          src="fanaro.io.svg"
+          src="/nextjs-github-pages/fanaro.io.svg"
           width={20}
           height={20}
           alt="fanaro.io logo"
