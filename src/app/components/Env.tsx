@@ -1,5 +1,4 @@
 import {
-  AccumulativeShadows,
   CameraControls,
   Environment,
   Lightformer,
@@ -8,29 +7,20 @@ import {
 
 export function Env() {
   return (
-    <>
-      <color attach="background" args={["#c6e5db"]} />
+    <group>
+      <Environment resolution={1024}>
+        <color attach="background" args={["cyan"]} />
 
-      <AccumulativeShadows
-        temporal
-        frames={100}
-        color="lightblue"
-        colorBlend={2}
-        opacity={0.7}
-        scale={60}
-        position={[0, -5, 0]}
-      >
         <RandomizedLight
+          position={[0, -5, 0]}
           amount={8}
           radius={15}
           ambient={0.5}
           intensity={1}
-          position={[-5, 10, -5]}
+          // position={[-5, 10, -5]}
           size={20}
         />
-      </AccumulativeShadows>
 
-      <Environment preset="city" resolution={1024}>
         <group rotation={[-Math.PI / 3, 0, 0]}>
           <Lightformer
             intensity={4}
@@ -68,7 +58,9 @@ export function Env() {
         dollySpeed={0}
         minPolarAngle={0}
         maxPolarAngle={Math.PI / 2}
+        maxZoom={1.75}
+        minZoom={1}
       />
-    </>
+    </group>
   )
 }

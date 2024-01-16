@@ -27,12 +27,13 @@ export default function App() {
           fov: 35,
           near: 1,
           far: 50,
+          zoom: 1.6,
         }}
       >
         <Suspense fallback={null}>
-          <Performance />
+          {/* <Performance /> */}
           <Env />
-          <OrbitControls />
+          {/* <OrbitControls /> */}
 
           <Aquarium position={[0, 0.25, 0]}>
             <FloatingLogos />
