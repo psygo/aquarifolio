@@ -22,7 +22,8 @@ My portfolio, done with [Three.js](https://threejs.org/).
   - [Color Grading](https://codesandbox.io/p/sandbox/color-grading-wvgxp?file=%2Fsrc%2FApp.js)
   - [React Ellipse Curve](https://codesandbox.io/p/sandbox/react-ellipsecurve-xzi6ps?file=%2Fsrc%2FApp.js)
   - [Portals](https://codesandbox.io/p/sandbox/portals-ik11ln?file=%2Fsrc%2FApp.js)
-- [Aquarium](https://codesandbox.io/p/sandbox/aquarium-n7jf0f?file=%2Fsrc%2Findex.js%3A33%2C31)
+  - [Aquarium](https://codesandbox.io/p/sandbox/aquarium-n7jf0f?file=%2Fsrc%2Findex.js%3A33%2C31)
+  - [React EllipseCurve](https://codesandbox.io/p/sandbox/react-ellipsecurve-forked-vwdmx8?file=%2Fsrc%2FApp.js%3A39%2C20)
 - [Wawa Sensei's YouTube Channel](https://www.youtube.com/@WawaSensei)
 - [Poimandres Open Source Collective](https://github.com/pmndrs)
 - 3D HTML:
