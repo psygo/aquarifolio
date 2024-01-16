@@ -2,6 +2,7 @@ import {
   CameraControls,
   Environment,
   Lightformer,
+  OrbitControls,
   RandomizedLight,
 } from "@react-three/drei"
 
@@ -17,7 +18,6 @@ export function Env() {
           radius={15}
           ambient={0.5}
           intensity={1}
-          // position={[-5, 10, -5]}
           size={20}
         />
 
@@ -53,14 +53,8 @@ export function Env() {
         </group>
       </Environment>
 
-      <CameraControls
-        truckSpeed={0}
-        dollySpeed={0}
-        minPolarAngle={0}
-        maxPolarAngle={Math.PI / 2}
-        maxZoom={1.75}
-        minZoom={1}
-      />
+      <OrbitControls />
+      <CameraControls maxZoom={1.75} minZoom={1} />
     </group>
   )
 }

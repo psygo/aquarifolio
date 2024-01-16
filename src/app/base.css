@@ -12,3 +12,9 @@ canvas {
   touch-action: none;
   animation: fade-in 5s ease 1s forwards;
 }
+
+@media (max-width: 450px) {
+  #name {
+    display: none;
+  }
+}

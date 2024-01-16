@@ -18,22 +18,17 @@ import {
 export default function App() {
   return (
     <main style={{ width: "100vw", height: "100vh" }}>
-      <Loader />
-
       <Canvas
         shadows
         camera={{
           position: [30, 0, -3],
           fov: 35,
-          near: 1,
-          far: 50,
-          zoom: 1.6,
+          zoom: 1.4,
         }}
       >
         <Suspense fallback={null}>
-          {/* <Performance /> */}
           <Env />
-          {/* <OrbitControls /> */}
+          {/* <Performance /> */}
 
           <Aquarium position={[0, 0.25, 0]}>
             <FloatingLogos />
@@ -44,6 +39,7 @@ export default function App() {
       </Canvas>
 
       <Overlay />
+      <Loader />
     </main>
   )
 }
