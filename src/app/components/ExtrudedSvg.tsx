@@ -72,6 +72,18 @@ export function FanaroIoLogo() {
   )
 }
 
+// Maybe this is not a closed path?
+export function AbstractMeLogo() {
+  return (
+    <ExtrudedSvg
+      filename="abstract_me.svg"
+      scale={10}
+      position={[4, 2, -1]}
+      rotation={[-Math.PI, Math.PI / 2, 0]}
+    />
+  )
+}
+
 export function FicLogo() {
   return (
     <ExtrudedSvg
@@ -151,6 +163,13 @@ export function FloatingLogos() {
       >
         <FanaroIoLogo />
       </Float>
+      {/* <Float
+        rotationIntensity={2}
+        floatIntensity={10}
+        speed={2}
+      >
+        <AbstractMeLogo />
+      </Float> */}
       <Float
         rotationIntensity={2}
         floatIntensity={10}
