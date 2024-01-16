@@ -64,7 +64,7 @@ export function ExtrudedSvg({
 export function FanaroIoLogo() {
   return (
     <ExtrudedSvg
-      filename="/nextjs-github-pages/fanaro.io.svg"
+      filename="fanaro.io.svg"
       scale={0.125}
       position={[4, 2, -1]}
       rotation={[-Math.PI, Math.PI / 2, 0]}
@@ -75,7 +75,7 @@ export function FanaroIoLogo() {
 export function FicLogo() {
   return (
     <ExtrudedSvg
-      filename="/nextjs-github-pages/fic.svg"
+      filename="fic.svg"
       rotation={[-Math.PI, Math.PI / 2, 0]}
       scale={0.02}
       depth={40}
@@ -87,7 +87,7 @@ export function FicLogo() {
 export function GithubLogo() {
   return (
     <ExtrudedSvg
-      filename="/nextjs-github-pages/github.svg"
+      filename="github.svg"
       scale={0.015}
       depth={20}
       position={[-3, -1, -3]}
@@ -99,7 +99,7 @@ export function GithubLogo() {
 export function NextjsLogo() {
   return (
     <ExtrudedSvg
-      filename="/nextjs-github-pages/next.js.svg"
+      filename="next.js.svg"
       scale={0.005}
       depth={20}
       position={[0, -1, -3]}
@@ -110,7 +110,7 @@ export function NextjsLogo() {
 export function ReactLogo() {
   return (
     <ExtrudedSvg
-      filename="/nextjs-github-pages/react.svg"
+      filename="react.svg"
       scale={0.005}
       depth={50}
       position={[1, 3, 2]}
@@ -122,7 +122,7 @@ export function ReactLogo() {
 export function ThreejsLogo() {
   return (
     <ExtrudedSvg
-      filename="/nextjs-github-pages/three.js.svg"
+      filename="three.js.svg"
       scale={0.01}
       depth={30}
       position={[-3, -1, -3]}
@@ -133,7 +133,7 @@ export function ThreejsLogo() {
 export function YtKbdNavLogo() {
   return (
     <ExtrudedSvg
-      filename="/nextjs-github-pages/yt_kbd_nav.svg"
+      filename="yt_kbd_nav.svg"
       scale={0.01}
       depth={40}
       position={[-1, 3, -2]}
