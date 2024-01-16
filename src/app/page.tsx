@@ -29,7 +29,7 @@ export default function App() {
       >
         <Suspense fallback={null}>
           <Env />
-          <Performance />
+          {/* <Performance /> */}
 
           <Aquarium position={[0, 0.25, 0]}>
             <ReactAtom />
