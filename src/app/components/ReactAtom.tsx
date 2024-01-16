@@ -20,6 +20,9 @@ const ellipseCurve = new THREE.EllipseCurve(
   0
 ).getPoints(100)
 
+/**
+ * Mostly from [the React EllipseCurve example](https://codesandbox.io/s/xzi6ps)
+ */
 export function ReactAtom() {
   return (
     <Float
