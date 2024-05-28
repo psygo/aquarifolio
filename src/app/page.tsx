@@ -12,7 +12,7 @@ import {
   Overlay,
   Performance,
   ReactAtom,
-} from "./components/exports"
+} from "../components/three/exports"
 
 export default function App() {
   return (

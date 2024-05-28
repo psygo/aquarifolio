@@ -22,13 +22,17 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"
       ],
       "@components/*": [
-        "./src/app/components/*"
-      ]
+        "./src/components/*"
+      ],
+      "@components": [
+        "./src/components/exports"
+      ],
     }
   },
   "include": [
