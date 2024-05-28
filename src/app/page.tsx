@@ -1,7 +1,5 @@
 "use client"
 
-import { Suspense } from "react"
-
 import { Canvas } from "@react-three/fiber"
 import { Loader } from "@react-three/drei"
 
@@ -18,7 +16,13 @@ import {
 
 export default function App() {
   return (
-    <main style={{ width: "100vw", height: "100vh" }}>
+    <main
+      style={{
+        width: "100vw",
+        height: "100vh",
+        background: "#c6e5db",
+      }}
+    >
       <Canvas
         shadows
         camera={{
@@ -27,17 +31,15 @@ export default function App() {
           zoom: 1.4,
         }}
       >
-        <Suspense fallback={null}>
-          <Env />
-          {/* <Performance /> */}
+        <Env />
+        {/* <Performance /> */}
 
-          <Aquarium position={[0, 0.25, 0]}>
-            <ReactAtom />
-            <FloatingLogos />
-            <FloatingSquircles />
-            <Circles />
-          </Aquarium>
-        </Suspense>
+        <Aquarium position={[0, 0.25, 0]}>
+          <ReactAtom />
+          <FloatingLogos />
+          <FloatingSquircles />
+          <Circles />
+        </Aquarium>
       </Canvas>
 
       <Overlay />

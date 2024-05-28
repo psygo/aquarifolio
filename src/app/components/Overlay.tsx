@@ -12,7 +12,15 @@ export function Overlay() {
         height: "100vh",
       }}
     >
-      <div id="name">
+      <a
+        id="name"
+        href="/portfolio"
+        style={{
+          pointerEvents: "auto",
+          color: "#21222c",
+          textDecoration: "none",
+        }}
+      >
         <h4
           style={{
             position: "absolute",
@@ -21,7 +29,8 @@ export function Overlay() {
             margin: 0,
           }}
         >
-          Philippe Fanaro | Full Stack Dev
+          <span>Philippe Fanaro</span> <span>|</span>{" "}
+          <span>Full Stack Dev</span>
         </h4>
         <hr
           style={{
@@ -31,10 +40,10 @@ export function Overlay() {
             pointerEvents: "auto",
             margin: 0,
             width: "242.5px",
-            border: "1px solid black",
+            border: "1px solid #21222c",
           }}
         />
-      </div>
+      </a>
       <div id="logos">
         <a
           style={{
