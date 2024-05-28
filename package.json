@@ -23,13 +23,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.0.2",
     "@react-three/drei": "^9.92.5",
     "@react-three/fiber": "^8.15.12",
     "@types/three": "^0.159.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "daisyui": "^4.11.1",
+    "lucide-react": "^0.379.0",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
+    "shadcn-ui": "^0.8.0",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7",
     "three": "^0.159.0"
   },
   "devDependencies": {

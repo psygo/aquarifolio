@@ -33,6 +33,18 @@
       "@components": [
         "./src/components/exports"
       ],
+      "@shad/*": [
+        "./src/components/common/shad/*"
+      ],
+      "@shad": [
+        "./src/components/common/shad/exports"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ],
+      "@styles": [
+        "./src/styles/exports"
+      ],
     }
   },
   "include": [
