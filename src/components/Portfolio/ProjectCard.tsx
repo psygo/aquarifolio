@@ -4,7 +4,7 @@ import { Star } from "lucide-react"
 
 import { Badge } from "@shad"
 
-type ProjectCardProps = {
+export type ProjectCardProps = {
   href: string
   iconFilename: string
   iconAlt: string
