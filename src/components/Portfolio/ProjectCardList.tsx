@@ -74,6 +74,21 @@ const projectCardsData: ProjectCardProps[] = [
   },
   {
     href: "https://github.com/FanaroEngineering/dogemp",
+    iconFilename: "sabaki_logo.png",
+    iconAlt: "Go Brasil Ranking",
+    title: "Go Brasil Ranking",
+    stars: 4,
+    description:
+      "An SPA with no dependencies for ranking Brazilian Go (board game) players. Also uses Firebase.",
+    badgeList: [
+      "Web Components",
+      "Firebase",
+      "NoSQL",
+      "Go (Board Game)",
+    ],
+  },
+  {
+    href: "https://github.com/FanaroEngineering/dogemp",
     iconFilename: "dogemp_logo.svg",
     iconAlt: "DOGemP",
     title: "DOGemP",
@@ -91,6 +106,16 @@ const projectCardsData: ProjectCardProps[] = [
     description:
       "A collection of CSS themes for the Go (board game) editor Sabaki",
     badgeList: ["CSS", "Sabaki", "Themes"],
+  },
+  {
+    href: "https://github.com/psygo/template_tsumego_ebook",
+    iconFilename: "latex_logo.png",
+    iconAlt: "Template Tsumego eBook",
+    title: "Template Tsumego eBook",
+    stars: 3,
+    description:
+      "A template for creating tsumego eBooks with LaTeX and pandoc.",
+    badgeList: ["LaTeX", "Go (Board Game)"],
   },
   {
     href: "https://github.com/psygo/latex-go-diagrams-template",
@@ -169,6 +194,23 @@ const projectCardsData: ProjectCardProps[] = [
     description:
       "My Mac 2023 dotfiles config, with Yabai WM.",
     badgeList: ["Dotfiles", "Mac", "Yabai"],
+  },
+  {
+    href: "https://github.com/psygo/sgf-tree-parser",
+    iconFilename: "graph_logo.png",
+    iconAlt: "SGF Tree Parser",
+    title: "SGF Tree Parser",
+    description:
+      "An SGF tree parser, made entirely with TypeScript, and with no dependencies.",
+    badgeList: ["Parser", "Tree", "TypeScript"],
+  },
+  {
+    href: "https://github.com/psygo/hookban",
+    iconFilename: "sabaki_logo.png",
+    iconAlt: "Hookban",
+    title: "Hookban",
+    description: "A goban board with pure Web Components.",
+    badgeList: ["Web Components", "TypeScript"],
   },
 ]
 
