@@ -52,6 +52,14 @@ export default function Portfolio() {
               ]}
             />
             <ProjectCard
+              href="https://github.com/psygo/three-portfolio"
+              iconFilename="Portfolio_Screenshot.png"
+              iconAlt="Aquarifolio"
+              title="Aquarifolio"
+              description="A 3D aquarium built with Three.js and React (React Three Fiber)."
+              badgeList={["Three.js", "React", "3D"]}
+            />
+            <ProjectCard
               href="https://github.com/psygo/abragodb"
               iconFilename="edgedb.png"
               iconAlt="EdgeDB Logo"

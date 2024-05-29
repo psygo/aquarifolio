@@ -2,7 +2,7 @@
 
 My portfolio, done with [Three.js](https://threejs.org/). It's more like an entry point to my stuff actually.
 
-<img alt="three.js portfolio screenshot" width="400px" src="Portfolio_Screenshot.png"/>
+<img alt="three.js portfolio screenshot" width="400px" src="public/Portfolio_Screenshot.png"/>
 
 ## What am I using?
 
