@@ -45,6 +45,7 @@ function TimelineItem({
 }: TimelineItemProps) {
   return (
     <li>
+      <hr className="bg-orange-500" />
       <TimelineMiddle />
       <div
         className={cn(
@@ -56,85 +57,92 @@ function TimelineItem({
         <TimelineYear year={year} />
         {children}
       </div>
-      <hr />
+      <hr className="bg-orange-500" />
     </li>
   )
 }
 
 export function Timeline() {
   return (
-    <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
-      <TimelineItem year="2024">
-        <div className="text-xl font-bold">
-          Full Stack Deveveloper
-        </div>
-        <div className="text-normal font-bold text-gray-400">
-          Feb 2023 - Jun 2023
-        </div>
-        <div className="text-lg font-semibold text-gray-300">
-          Vertical Insure
-        </div>
-        <ul>
-          <li>Frontend: React, Lit Framework, JS | TS</li>
-          <li>Backend: Java, Micronaut, NodeJS, Express</li>
-          <li>
-            DevOps: AWS, Render, DataDog, Retool, etc.
-          </li>
-        </ul>
-      </TimelineItem>
-
-      <TimelineItem start={false} year={"2023"}>
-        <div className="text-xl font-bold">
-          Go (Board Game) Teacher
-        </div>
-        <div className="text-normal font-bold text-gray-400">
-          Jun 2022 - Sep 2023
-        </div>
-      </TimelineItem>
-
-      <TimelineItem year={"2022"}>
-        <div className="text-xl font-bold">
-          Open Source Deveveloper
-        </div>
-        <div className="text-normal font-bold text-gray-400">
-          Sep 2020 - Jan 2021
-        </div>
-        <div className="text-lg font-semibold text-gray-300">
-          Pid
-        </div>
-        <div>
-          Helped develop an open source data structure
-          package for Dart/Flutter:{" "}
-          <a
-            className="underline"
-            href="https://github.com/marcglasberg/fast_immutable_collections"
-          >
-            Fast Immutable Collections (FIC)
-          </a>
-        </div>
-      </TimelineItem>
-
-      <TimelineItem start={false} year="2020">
-        <div className="text-xl font-bold">
-          Data Scientist
-        </div>
-        <div className="text-normal font-bold text-gray-400">
-          Feb 2019 - Oct 2019
-        </div>
-        <div className="text-lg font-semibold text-gray-300">
-          Zanthus
-        </div>
-        <div>
-          Data Scientist Full Stack:
+    <div className="border-[1px] ronded-md p-4">
+      <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+        <TimelineItem year="2024">
+          <div className="text-xl font-bold">
+            Full Stack Deveveloper
+          </div>
+          <div className="text-normal font-bold text-gray-400">
+            Feb 2023 - Jun 2023
+          </div>
+          <div className="text-lg font-semibold text-gray-300">
+            Vertical Insure
+          </div>
           <ul>
-            <li>Data Extraction (SQL)</li>
-            <li>Preprocessing</li>
-            <li>Modeling</li>
-            <li>Data API (Django)</li>
-            <li>Customer Lifetime Value (CLV)</li>
+            <li>Frontend: React, Lit Framework, JS | TS</li>
+            <li>
+              Backend: Java, Micronaut, NodeJS, Express
+            </li>
+            <li>
+              DevOps: AWS, Render, DataDog, Retool, etc.
+            </li>
           </ul>
-        </div>
-      </TimelineItem>
-    </ul>
+        </TimelineItem>
+
+        <TimelineItem start={false} year={"2023"}>
+          <div className="text-xl font-bold">
+            Go (Board Game) Teacher
+          </div>
+          <div className="text-normal font-bold text-gray-400">
+            Jun 2022 - Sep 2023
+          </div>
+          <div className="text-lg font-semibold text-gray-300">
+            Self-Employed
+          </div>
+        </TimelineItem>
+
+        <TimelineItem year={"2022"}>
+          <div className="text-xl font-bold">
+            Open Source Deveveloper
+          </div>
+          <div className="text-normal font-bold text-gray-400">
+            Sep 2020 - Jan 2021
+          </div>
+          <div className="text-lg font-semibold text-gray-300">
+            Pid
+          </div>
+          <div>
+            Helped develop an open source data structure
+            package for Dart/Flutter:{" "}
+            <a
+              className="underline"
+              href="https://github.com/marcglasberg/fast_immutable_collections"
+            >
+              Fast Immutable Collections (FIC)
+            </a>
+          </div>
+        </TimelineItem>
+
+        <TimelineItem start={false} year="2020">
+          <div className="text-xl font-bold">
+            Data Scientist
+          </div>
+          <div className="text-normal font-bold text-gray-400">
+            Feb 2019 - Oct 2019
+          </div>
+          <div className="text-lg font-semibold text-gray-300">
+            Zanthus
+          </div>
+          <div>
+            Data Scientist Full Stack:
+            <ul>
+              <li>Data Extraction (SQL)</li>
+              <li>Preprocessing</li>
+              <li>Modeling</li>
+              <li>Data API (Django)</li>
+              <li>Customer Lifetime Value (CLV)</li>
+            </ul>
+          </div>
+        </TimelineItem>
+      </ul>
+    </div>
   )
 }
