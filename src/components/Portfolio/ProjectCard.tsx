@@ -54,7 +54,7 @@ export function ProjectCard({
         <h5 className="text-sm text-gray-400">
           {description}
         </h5>
-        <div className="flex gap-1 ml-[-4px]">
+        <div className="flex flex-wrap gap-1 ml-[-4px]">
           {badgeList.map((b, i) => (
             <Badge variant="secondary" key={i}>
               {b}

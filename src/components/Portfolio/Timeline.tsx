@@ -1,6 +1,7 @@
 import { ReactNode } from "react"
 
 import { cn } from "@styles"
+import { Badge } from "../common/shad/badge"
 
 function TimelineMiddle() {
   return (
@@ -55,7 +56,9 @@ function TimelineItem({
         )}
       >
         <TimelineYear year={year} />
-        {children}
+        <div className="flex flex-col gap-1 mt-2">
+          {children}
+        </div>
       </div>
       <hr className="bg-orange-500" />
     </li>
@@ -76,6 +79,12 @@ export function Timeline() {
           <div className="text-lg font-semibold text-gray-300">
             Vertical Insure
           </div>
+          <Badge
+            variant="outline"
+            className="w-max bg-green-700 text-normal"
+          >
+            Work
+          </Badge>
           <ul>
             <li>Frontend: React, Lit Framework, JS | TS</li>
             <li>
@@ -97,6 +106,16 @@ export function Timeline() {
           <div className="text-lg font-semibold text-gray-300">
             Self-Employed
           </div>
+          <Badge
+            variant="outline"
+            className="w-max bg-green-700 text-normal"
+          >
+            Work
+          </Badge>
+          <div>
+            Private lessons, YouTube videos, and an online
+            league, among other activities.
+          </div>
         </TimelineItem>
 
         <TimelineItem year={"2022"}>
@@ -109,6 +128,12 @@ export function Timeline() {
           <div className="text-lg font-semibold text-gray-300">
             Pid
           </div>
+          <Badge
+            variant="outline"
+            className="w-max bg-green-700 text-normal"
+          >
+            Work
+          </Badge>
           <div>
             Helped develop an open source data structure
             package for Dart/Flutter:{" "}
@@ -131,6 +156,12 @@ export function Timeline() {
           <div className="text-lg font-semibold text-gray-300">
             Zanthus
           </div>
+          <Badge
+            variant="outline"
+            className="w-max bg-green-700 text-normal"
+          >
+            Work
+          </Badge>
           <div>
             Data Scientist Full Stack:
             <ul>
@@ -140,6 +171,93 @@ export function Timeline() {
               <li>Data API (Django)</li>
               <li>Customer Lifetime Value (CLV)</li>
             </ul>
+          </div>
+        </TimelineItem>
+
+        <TimelineItem start={false} year="2018">
+          <div className="text-xl font-bold">
+            Masters of Baduk Studies (Incomplete)
+          </div>
+          <div className="text-normal font-bold text-gray-400">
+            Aug 2017 - Dec 2017
+          </div>
+          <div className="text-lg font-semibold text-gray-300">
+            Myongji University (South Korea)
+          </div>
+          <Badge
+            variant="outline"
+            className="w-max bg-blue-700 text-normal"
+          >
+            Education
+          </Badge>
+          <div>
+            Lived for a semester in South Korea to study
+            Baduk or Go (board game).
+          </div>
+        </TimelineItem>
+
+        <TimelineItem start={false} year="2017">
+          <div className="text-xl font-bold">
+            Startup Intern
+          </div>
+          <div className="text-normal font-bold text-gray-400">
+            Aug 2016 - Dec 2016
+          </div>
+          <div className="text-lg font-semibold text-gray-300">
+            Vital Care App
+          </div>
+          <Badge
+            variant="outline"
+            className="w-max bg-green-700 text-normal"
+          >
+            Work
+          </Badge>
+          <div>
+            Marketing, SEO and UI/UX improvements to the
+            Vital Care App.
+          </div>
+        </TimelineItem>
+
+        <TimelineItem start={false} year="2016">
+          <div className="text-xl font-bold">
+            International Engineering Exchange
+          </div>
+          <div className="text-normal font-bold text-gray-400">
+            Aug 2015 - Aug 2016
+          </div>
+          <div className="text-lg font-semibold text-gray-300">
+            Université Libre de Bruxelles (ULB)
+          </div>
+          <Badge
+            variant="outline"
+            className="w-max bg-blue-700 text-normal"
+          >
+            Education
+          </Badge>
+          <div>
+            One year of exchange in Brussels, Belgium,
+            through a government scholarship.
+          </div>
+        </TimelineItem>
+
+        <TimelineItem start={false} year="2012">
+          <div className="text-xl font-bold">
+            Electrical Engineering Bachelors
+          </div>
+          <div className="text-normal font-bold text-gray-400">
+            Jan 2011 - Dec 2016
+          </div>
+          <div className="text-lg font-semibold text-gray-300">
+            Universidade de São Paulo (USP)
+          </div>
+          <Badge
+            variant="outline"
+            className="w-max bg-blue-700 text-normal"
+          >
+            Education
+          </Badge>
+          <div>
+            With s strong emphasis on telecommunications.
           </div>
         </TimelineItem>
       </ul>
