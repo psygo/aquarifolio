@@ -20,7 +20,7 @@ export default function Portfolio() {
               iconFilename="fic.svg"
               iconAlt="FIC Logo"
               title="Fast Immutable Collections"
-              stars={200}
+              stars={203}
               description="Immutable Data Structures for Dart (Co-Developed)"
               badgeList={[
                 "Dart",
@@ -43,7 +43,7 @@ export default function Portfolio() {
               iconAlt="Fanaro.io Logo"
               title="fanaro.io"
               stars={6}
-              description="My personal blog, made entirely with vanilla HTML/CSS/JS, with more than 100 articles on Go (board game), and various other topics, including programming."
+              description="My personal blog, made entirely with vanilla HTML/CSS/JS, with 100+ articles on Go (board game), and various other topics, including programming."
               badgeList={[
                 "HTML",
                 "CSS",
