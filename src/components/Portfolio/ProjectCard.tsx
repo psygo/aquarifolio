@@ -1,7 +1,8 @@
 import Image from "next/image"
 
-import { Badge } from "@shad"
 import { Star } from "lucide-react"
+
+import { Badge } from "@shad"
 
 type ProjectCardProps = {
   href: string
