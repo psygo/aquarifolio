@@ -1,13 +1,12 @@
-import { ProjectCard } from "@components/Portfolio/exports"
+import {
+  ProjectCard,
+  TopNav,
+} from "@components/Portfolio/exports"
 
 export default function Portfolio() {
   return (
     <>
-      <nav className="bg-gray-800 p-2 py-3">
-        <h1 className="text-xl font-semibold">
-          Philippe Fanaro&apos;s Portfolio
-        </h1>
-      </nav>
+      <TopNav />
 
       <main className="flex flex-col gap-6 min-h-screen p-4">
         <section className="flex flex-col gap-2 items-center">
