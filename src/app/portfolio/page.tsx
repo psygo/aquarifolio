@@ -1,6 +1,7 @@
 import Link from "next/link"
 
 import {
+  Footer,
   ProjectCardList,
   Timeline,
   TopNav,
@@ -34,6 +35,8 @@ export default function Portfolio() {
           </section>
         </article>
       </main>
+
+      <Footer />
     </>
   )
 }

@@ -1,3 +1,4 @@
+export * from "./Footer"
 export * from "./ProjectCard"
 export * from "./ProjectCardList"
 export * from "./Timeline"
