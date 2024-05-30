@@ -1,4 +1,4 @@
-# Philippe Fanaro's Three.js Portfolio
+# Aquarifolio - Philippe Fanaro's Three.js Portfolio
 
 My portfolio, done with [Three.js](https://threejs.org/). You can just click on my name to on the aquarium's overlay to reach the portfolio.
 
