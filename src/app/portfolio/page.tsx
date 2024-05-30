@@ -1,11 +1,11 @@
-import Link from "next/link"
-
 import {
   Footer,
   ProjectCardList,
   Timeline,
   TopNav,
-  WithReactChildren,
+  PortfolioSection,
+  projectsContributedData,
+  projectsData,
 } from "@components/Portfolio/exports"
 
 export default function Portfolio() {
@@ -14,12 +14,21 @@ export default function Portfolio() {
       <TopNav />
 
       <main className="flex flex-col items-center min-h-screen p-4">
-        <article className="flex flex-col gap-6 max-w-[600px]">
+        <article className="flex flex-col gap-6 max-w-[700px]">
           <PortfolioSection
             title="Projects"
             href="#projects"
           >
-            <ProjectCardList />
+            <ProjectCardList projects={projectsData} />
+          </PortfolioSection>
+
+          <PortfolioSection
+            title="Projects I've Contributed To"
+            href="#projects-contributed"
+          >
+            <ProjectCardList
+              projects={projectsContributedData}
+            />
           </PortfolioSection>
 
           <PortfolioSection
@@ -33,28 +42,5 @@ export default function Portfolio() {
 
       <Footer />
     </>
-  )
-}
-
-type PortfolioSectionProps = WithReactChildren & {
-  title: string
-  href: string
-}
-
-function PortfolioSection({
-  title,
-  href,
-  children,
-}: PortfolioSectionProps) {
-  return (
-    <section className="flex flex-col gap-[6px] items-center">
-      <Link href={href}>
-        <h2 className="text-xl font-semibold text-gray-300 pl-4">
-          {title}
-        </h2>
-      </Link>
-
-      {children}
-    </section>
   )
 }

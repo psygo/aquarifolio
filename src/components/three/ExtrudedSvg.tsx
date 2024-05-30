@@ -5,7 +5,7 @@ import { SVGLoader } from "three/examples/jsm/Addons.js"
 import { useLoader } from "@react-three/fiber"
 import { Float } from "@react-three/drei"
 
-import { WithPositionAndRotation } from "./utils"
+import { WithPositionAndRotation } from "@types"
 
 //----------------------------------------------------------
 

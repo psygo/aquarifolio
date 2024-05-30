@@ -1,4 +1,5 @@
 export * from "./Footer"
+export * from "./PortfolioSection"
 export * from "./ProjectCard"
 export * from "./ProjectCardList"
 export * from "./Timeline"

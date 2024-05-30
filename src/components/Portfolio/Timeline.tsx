@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { WithReactChildren } from "@types"
 
 import { cn } from "@styles"
 
@@ -10,10 +10,6 @@ type TimelineYearProps = {
 
 function TimelineYear({ year }: TimelineYearProps) {
   return <time className="font-mono px-1">{year}</time>
-}
-
-export type WithReactChildren = {
-  children: ReactNode
 }
 
 enum TimelineActivity {

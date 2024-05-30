@@ -7,7 +7,7 @@ import {
   useMask,
 } from "@react-three/drei"
 
-import { Position } from "./utils"
+import { Position } from "@types"
 
 type AquariumProps = {
   position?: Position

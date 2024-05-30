@@ -10,7 +10,7 @@ import {
 const containerAnimationParams = {
   visible: {
     transition: {
-      delayChildren: 0.2,
+      delayChildren: 0.1,
       staggerChildren: 0.05,
     },
   },
@@ -27,7 +27,7 @@ const itemAnimationParams = {
   },
 }
 
-const projectCardsData: ProjectCardProps[] = [
+export const projectsData: ProjectCardProps[] = [
   {
     href: "https://github.com/marcglasberg/fast_immutable_collections",
     iconFilename: "fic.svg",
@@ -214,17 +214,46 @@ const projectCardsData: ProjectCardProps[] = [
   },
 ]
 
-export function ProjectCardList() {
+export const projectsContributedData: ProjectCardProps[] = [
+  {
+    href: "https://github.com/CamDavidsonPilon/lifetimes",
+    iconFilename: "lifetimes_logo.png",
+    iconAlt: "Lifetimes Logo",
+    title: "Lifetimes",
+    stars: 1400,
+    description:
+      "Immutable Data Structures for Dart (Co-Developed)",
+    badgeList: ["Python", "Data Science"],
+  },
+  {
+    href: "https://github.com/marcglasberg/fast_immutable_collections",
+    iconFilename: "fic.svg",
+    iconAlt: "FIC Logo",
+    title: "Fast Immutable Collections",
+    stars: 203,
+    description:
+      "Immutable Data Structures for Dart (Co-Developed)",
+    badgeList: ["Dart", "Flutter", "Data Structures"],
+  },
+]
+
+type ProjectCardListProps = {
+  projects: ProjectCardProps[]
+}
+
+export function ProjectCardList({
+  projects,
+}: ProjectCardListProps) {
   return (
     <motion.ul
       variants={containerAnimationParams}
       initial="hidden"
       animate="visible"
-      className="flex flex-col gap-3 max-w-[600px]"
+      className="flex flex-col gap-3 w-full"
     >
-      {projectCardsData.map((pc, i) => (
+      {projects.map((p, i) => (
         <motion.li key={i} variants={itemAnimationParams}>
-          <ProjectCard {...pc} />
+          <ProjectCard {...p} />
         </motion.li>
       ))}
     </motion.ul>
