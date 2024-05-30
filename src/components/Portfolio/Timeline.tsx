@@ -1,7 +1,8 @@
 import { ReactNode } from "react"
 
 import { cn } from "@styles"
-import { Badge } from "../common/shad/badge"
+
+import { Badge } from "@shad"
 
 function TimelineMiddle() {
   return (
@@ -27,21 +28,28 @@ type TimelineYearProps = {
 }
 
 function TimelineYear({ year }: TimelineYearProps) {
-  return <time className="font-mono">{year}</time>
+  return <time className="font-mono px-1">{year}</time>
 }
 
 export type WithReactChildren = {
   children: ReactNode
 }
 
+enum TimelineActivity {
+  Work = "Work",
+  Education = "Education",
+}
+
 type TimelineItemProps = WithReactChildren & {
   start?: boolean
   year: string
+  activity?: TimelineActivity
 }
 
 function TimelineItem({
   start = true,
   year,
+  activity = TimelineActivity.Work,
   children,
 }: TimelineItemProps) {
   return (
@@ -50,14 +58,31 @@ function TimelineItem({
       <TimelineMiddle />
       <div
         className={cn(
+          "mb-10 mt-[6px]",
           `timeline-${start ? "start" : "end"}`,
-          `md:text-${start ? "end" : "start"}`,
-          "mb-10 mt-[6px]"
+          `md:text-${start ? "end" : "start"}`
         )}
       >
         <TimelineYear year={year} />
-        <div className="flex flex-col gap-1 mt-2">
-          {children}
+        <div
+          className={cn(
+            "flex flex-col gap-1 mt-2",
+            start ? "md:text-end" : "md:text-start",
+            start ? "md:items-end" : "md:items-start"
+          )}
+        >
+          <Badge
+            variant="outline"
+            className={cn(
+              "w-max text-normal",
+              activity === TimelineActivity.Work
+                ? "bg-green-700"
+                : "bg-blue-700"
+            )}
+          >
+            {activity}
+          </Badge>
+          <div className="px-1">{children}</div>
         </div>
       </div>
       <hr className="bg-orange-500" />
@@ -79,12 +104,6 @@ export function Timeline() {
           <div className="text-lg font-semibold text-gray-300">
             Vertical Insure
           </div>
-          <Badge
-            variant="outline"
-            className="w-max bg-green-700 text-normal"
-          >
-            Work
-          </Badge>
           <ul>
             <li>Frontend: React, Lit Framework, JS | TS</li>
             <li>
@@ -106,12 +125,6 @@ export function Timeline() {
           <div className="text-lg font-semibold text-gray-300">
             Self-Employed
           </div>
-          <Badge
-            variant="outline"
-            className="w-max bg-green-700 text-normal"
-          >
-            Work
-          </Badge>
           <div>
             Private lessons, YouTube videos, and an online
             league, among other activities.
@@ -128,12 +141,6 @@ export function Timeline() {
           <div className="text-lg font-semibold text-gray-300">
             Pid
           </div>
-          <Badge
-            variant="outline"
-            className="w-max bg-green-700 text-normal"
-          >
-            Work
-          </Badge>
           <div>
             Helped develop an open source data structure
             package for Dart/Flutter:{" "}
@@ -156,12 +163,6 @@ export function Timeline() {
           <div className="text-lg font-semibold text-gray-300">
             Zanthus
           </div>
-          <Badge
-            variant="outline"
-            className="w-max bg-green-700 text-normal"
-          >
-            Work
-          </Badge>
           <div>
             Data Scientist Full Stack:
             <ul>
@@ -174,7 +175,10 @@ export function Timeline() {
           </div>
         </TimelineItem>
 
-        <TimelineItem start={false} year="2018">
+        <TimelineItem
+          year="2018"
+          activity={TimelineActivity.Education}
+        >
           <div className="text-xl font-bold">
             Masters of Baduk Studies (Incomplete)
           </div>
@@ -184,12 +188,6 @@ export function Timeline() {
           <div className="text-lg font-semibold text-gray-300">
             Myongji University (South Korea)
           </div>
-          <Badge
-            variant="outline"
-            className="w-max bg-blue-700 text-normal"
-          >
-            Education
-          </Badge>
           <div>
             Lived for a semester in South Korea to study
             Baduk or Go (board game).
@@ -206,19 +204,16 @@ export function Timeline() {
           <div className="text-lg font-semibold text-gray-300">
             Vital Care App
           </div>
-          <Badge
-            variant="outline"
-            className="w-max bg-green-700 text-normal"
-          >
-            Work
-          </Badge>
           <div>
             Marketing, SEO and UI/UX improvements to the
             Vital Care App.
           </div>
         </TimelineItem>
 
-        <TimelineItem start={false} year="2016">
+        <TimelineItem
+          year="2016"
+          activity={TimelineActivity.Education}
+        >
           <div className="text-xl font-bold">
             International Engineering Exchange
           </div>
@@ -228,19 +223,17 @@ export function Timeline() {
           <div className="text-lg font-semibold text-gray-300">
             Université Libre de Bruxelles (ULB)
           </div>
-          <Badge
-            variant="outline"
-            className="w-max bg-blue-700 text-normal"
-          >
-            Education
-          </Badge>
           <div>
             One year of exchange in Brussels, Belgium,
             through a government scholarship.
           </div>
         </TimelineItem>
 
-        <TimelineItem start={false} year="2012">
+        <TimelineItem
+          start={false}
+          year="2012"
+          activity={TimelineActivity.Education}
+        >
           <div className="text-xl font-bold">
             Electrical Engineering Bachelors
           </div>
@@ -250,12 +243,6 @@ export function Timeline() {
           <div className="text-lg font-semibold text-gray-300">
             Universidade de São Paulo (USP)
           </div>
-          <Badge
-            variant="outline"
-            className="w-max bg-blue-700 text-normal"
-          >
-            Education
-          </Badge>
           <div>
             With s strong emphasis on telecommunications.
           </div>
