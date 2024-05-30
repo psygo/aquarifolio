@@ -1,6 +1,11 @@
+/*--------------------------------------------------------*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*--------------------------------------------------------*/
+/* Three.js Stuff */
 
 @keyframes fade-in {
   from {
@@ -17,35 +22,8 @@ canvas {
   animation: fade-in 5s ease 1s forwards;
 }
 
-@media (max-width: 400px) {
-  #name {
-    /* display: none; */
-    zoom: 0.9;
-  }
-
-  #name h4 {
-    bottom: 16px !important;
-  }
-
-  #name hr {
-    bottom: 14px !important;
-  }
-}
-
-@media (max-width: 350px) {
-  #name {
-    /* display: none; */
-    zoom: 0.8;
-  }
-
-  #name h4 {
-    bottom: 18px !important;
-  }
-
-  #name hr {
-    bottom: 16px !important;
-  }
-}
+/*--------------------------------------------------------*/
+/* shadcn/ui */
 
 @layer base {
   :root {
@@ -119,3 +97,5 @@ canvas {
     @apply bg-background text-foreground;
   }
 }
+
+/*--------------------------------------------------------*/

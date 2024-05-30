@@ -16,13 +16,7 @@ import {
 
 export default function App() {
   return (
-    <main
-      style={{
-        width: "100vw",
-        height: "100vh",
-        background: "#c6e5db",
-      }}
-    >
+    <main className="w-screen h-screen bg-[#c6e5db]">
       <Canvas
         shadows
         camera={{
@@ -32,7 +26,6 @@ export default function App() {
         }}
       >
         <Env />
-        {/* <Performance /> */}
 
         <Aquarium position={[0, 0.25, 0]}>
           <ReactAtom />

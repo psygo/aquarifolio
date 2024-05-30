@@ -12,6 +12,9 @@ My portfolio, done with [Three.js](https://threejs.org/). It's more like an entr
   - [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
   - [Drei](https://github.com/pmndrs/drei)
   - [React Three Rapier](https://github.com/pmndrs/react-three-rapier), a physics engine for Three.js
+- [Tailwind](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [daisyUI](https://daisyui.com/)
 
 ## References
 

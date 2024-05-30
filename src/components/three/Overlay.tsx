@@ -1,115 +1,78 @@
 import Image from "next/image"
+import Link from "next/link"
 
 export function Overlay() {
   return (
-    <div
-      style={{
-        position: "absolute",
-        bottom: 0,
-        right: 0,
-        pointerEvents: "none",
-        width: "100vw",
-        height: "100vh",
-      }}
+    <nav className="absolute bottom-2 w-screen flex flex-wrap gap-1 justify-between px-3">
+      <BottomLeft />
+      <BottomRight />
+    </nav>
+  )
+}
+
+function BottomLeft() {
+  return (
+    <Link
+      href="/portfolio"
+      className="text-black font-bold"
     >
-      <a
-        id="name"
-        href="/portfolio"
-        style={{
-          pointerEvents: "auto",
-          color: "#21222c",
-          textDecoration: "none",
-        }}
-      >
-        <h4
-          style={{
-            position: "absolute",
-            bottom: 12,
-            left: 10,
-            margin: 0,
-          }}
-        >
-          <span>Philippe Fanaro</span> <span>|</span>{" "}
-          <span>Full Stack Dev</span>
-        </h4>
-        <hr
-          style={{
-            position: "absolute",
-            bottom: 8,
-            left: 10,
-            pointerEvents: "auto",
-            margin: 0,
-            width: "242.5px",
-            border: "1px solid #21222c",
-          }}
-        />
-      </a>
-      <div id="logos">
-        <a
-          style={{
-            position: "absolute",
-            bottom: 10,
-            right: 97,
-            pointerEvents: "auto",
-          }}
-          href="https://github.com/psygo"
-        >
-          <Image
-            src="abstract_me.svg"
-            width={20}
-            height={20}
-            alt="Philippe Fanaro (@psygo) on Github"
-          />
-        </a>
-        <a
-          style={{
-            position: "absolute",
-            bottom: 10,
-            right: 70,
-            pointerEvents: "auto",
-          }}
-          href="https://www.linkedin.com/in/philippe-fanaro/?locale=en_US"
-        >
-          <Image
-            src="linkedin.svg"
-            width={20}
-            height={20}
-            alt="Philippe Fanaro on LinkedIn"
-          />
-        </a>
-        <a
-          style={{
-            position: "absolute",
-            bottom: 10,
-            right: 41,
-            pointerEvents: "auto",
-          }}
-          href="https://github.com/psygo/three-portfolio"
-        >
-          <Image
-            src="github.svg"
-            width={20}
-            height={20}
-            alt="This portfolio on Github"
-          />
-        </a>
-        <a
-          style={{
-            position: "absolute",
-            bottom: 8,
-            right: 10,
-            pointerEvents: "auto",
-          }}
-          href="https://fanaro.io"
-        >
-          <Image
-            src="fanaro.io.svg"
-            width={23}
-            height={23}
-            alt="fanaro.io"
-          />
-        </a>
-      </div>
+      <h1>Philippe Fanaro | Full Stack Dev</h1>
+    </Link>
+  )
+}
+
+function BottomRight() {
+  return (
+    <div className="flex gap-2">
+      <IconLink
+        href="https://github.com/psygo"
+        iconSrc="abstract_me.svg"
+        size={20}
+        alt="Philippe Fanaro (@psygo) on Github"
+      />
+      <IconLink
+        href="https://www.linkedin.com/in/philippe-fanaro/?locale=en_US"
+        iconSrc="linkedin.svg"
+        size={20}
+        alt="Philippe Fanaro on LinkedIn"
+      />
+      <IconLink
+        href="https://github.com/psygo/three-portfolio"
+        iconSrc="github.svg"
+        size={20}
+        alt="This portfolio on Github"
+      />
+      <IconLink
+        href="https://fanaro.io"
+        iconSrc="fanaro.io.svg"
+        size={23}
+        alt="fanaro.io"
+      />
     </div>
+  )
+}
+
+type IconLinkProps = {
+  href: string
+  iconSrc: string
+  size: number
+  alt: string
+}
+
+function IconLink({
+  href,
+  iconSrc,
+  size,
+  alt,
+}: IconLinkProps) {
+  return (
+    <Link href={href}>
+      <Image
+        src={iconSrc}
+        width={size}
+        height={size}
+        alt={alt}
+      />
+    </Link>
   )
 }

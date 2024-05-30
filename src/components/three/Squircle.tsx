@@ -36,10 +36,7 @@ export function Squircle({
   position = [-2, -2, 0],
 }: SquircleProps) {
   return (
-    <mesh
-      geometry={squircleGeometry}
-      position={position}
-    >
+    <mesh geometry={squircleGeometry} position={position}>
       <meshPhysicalMaterial
         metalness={0.1}
         roughness={0.36}

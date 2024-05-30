@@ -1,5 +1,5 @@
-import { Stats } from "@react-three/drei";
-import { Perf } from "r3f-perf";
+import { Stats } from "@react-three/drei"
+import { Perf } from "r3f-perf"
 
 export function Performance() {
   return (
@@ -7,5 +7,5 @@ export function Performance() {
       <Perf />
       <Stats />
     </group>
-  );
+  )
 }
