@@ -5,6 +5,7 @@ import {
   ProjectCardList,
   Timeline,
   TopNav,
+  WithReactChildren,
 } from "@components/Portfolio/exports"
 
 export default function Portfolio() {
@@ -14,29 +15,46 @@ export default function Portfolio() {
 
       <main className="flex flex-col items-center min-h-screen p-4">
         <article className="flex flex-col gap-6 max-w-[600px]">
-          <section className="flex flex-col gap-2 items-center">
-            <Link href="#projects">
-              <h2 className="text-xl font-semibold text-gray-300 pl-4">
-                Projects
-              </h2>
-            </Link>
-
+          <PortfolioSection
+            title="Projects"
+            href="#projects"
+          >
             <ProjectCardList />
-          </section>
+          </PortfolioSection>
 
-          <section className="flex flex-col gap-2 items-center">
-            <Link href="#career-timeline">
-              <h2 className="text-xl font-semibold text-gray-300 pl-4">
-                Career Timeline
-              </h2>
-            </Link>
-
+          <PortfolioSection
+            title="Career Timeline"
+            href="#career-timeline"
+          >
             <Timeline />
-          </section>
+          </PortfolioSection>
         </article>
       </main>
 
       <Footer />
     </>
+  )
+}
+
+type PortfolioSectionProps = WithReactChildren & {
+  title: string
+  href: string
+}
+
+function PortfolioSection({
+  title,
+  href,
+  children,
+}: PortfolioSectionProps) {
+  return (
+    <section className="flex flex-col gap-[6px] items-center">
+      <Link href={href}>
+        <h2 className="text-xl font-semibold text-gray-300 pl-4">
+          {title}
+        </h2>
+      </Link>
+
+      {children}
+    </section>
   )
 }
