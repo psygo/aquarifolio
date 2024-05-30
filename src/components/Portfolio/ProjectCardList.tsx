@@ -222,7 +222,7 @@ export const projectsContributedData: ProjectCardProps[] = [
     title: "Lifetimes",
     stars: 1400,
     description:
-      "Immutable Data Structures for Dart (Co-Developed)",
+      "Analytic Customer Lifetime Value (CLV) calculations.",
     badgeList: ["Python", "Data Science"],
   },
   {
