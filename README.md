@@ -1,6 +1,6 @@
 # Philippe Fanaro's Three.js Portfolio
 
-My portfolio, done with [Three.js](https://threejs.org/). It's more like an entry point to my stuff actually.
+My portfolio, done with [Three.js](https://threejs.org/). You can just click on my name to on the aquarium's overlay to reach the portfolio.
 
 <img alt="three.js portfolio screenshot" width="400px" src="public/Portfolio_Screenshot.png"/>
 
