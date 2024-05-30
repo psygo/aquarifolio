@@ -58,9 +58,9 @@ function TimelineItem({
       <TimelineMiddle />
       <div
         className={cn(
-          "mb-10 mt-[6px]",
-          `timeline-${start ? "start" : "end"}`,
-          `md:text-${start ? "end" : "start"}`
+          "pt-[2px] mb-4",
+          start ? "timeline-start" : "timeline-end",
+          start ? "md:text-end" : "md:text-start"
         )}
       >
         <TimelineYear year={year} />
@@ -82,7 +82,7 @@ function TimelineItem({
           >
             {activity}
           </Badge>
-          <div className="px-1">{children}</div>
+          <div className="px-[2px]">{children}</div>
         </div>
       </div>
       <hr className="bg-orange-500" />
@@ -90,162 +90,160 @@ function TimelineItem({
   )
 }
 
+type TimelineItemContentProps = WithReactChildren & {
+  title: string
+  date: string
+  institution: string
+}
+
+function TimelineItemContent({
+  title,
+  date,
+  institution,
+  children,
+}: TimelineItemContentProps) {
+  return (
+    <div className="flex flex-col gap-2">
+      <div>
+        <div className="text-xl font-bold">{title}</div>
+        <div className="text-normal font-bold text-gray-400 pt-[1px]">
+          {date}
+        </div>
+        <div className="text-lg font-semibold text-gray-300">
+          {institution}
+        </div>
+      </div>
+      {children}
+    </div>
+  )
+}
+
 export function Timeline() {
   return (
     <div className="border-[1px] ronded-md p-4">
       <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
-        <TimelineItem year="2024">
-          <div className="text-xl font-bold">
-            Full Stack Deveveloper
-          </div>
-          <div className="text-normal font-bold text-gray-400">
-            Feb 2023 - Jun 2023
-          </div>
-          <div className="text-lg font-semibold text-gray-300">
-            Vertical Insure
-          </div>
-          <ul>
-            <li>Frontend: React, Lit Framework, JS | TS</li>
-            <li>
-              Backend: Java, Micronaut, NodeJS, Express
-            </li>
-            <li>
-              DevOps: AWS, Render, DataDog, Retool, etc.
-            </li>
-          </ul>
-        </TimelineItem>
-
-        <TimelineItem start={false} year={"2023"}>
-          <div className="text-xl font-bold">
-            Go (Board Game) Teacher
-          </div>
-          <div className="text-normal font-bold text-gray-400">
-            Jun 2022 - Sep 2023
-          </div>
-          <div className="text-lg font-semibold text-gray-300">
-            Self-Employed
-          </div>
-          <div>
-            Private lessons, YouTube videos, and an online
-            league, among other activities.
-          </div>
-        </TimelineItem>
-
-        <TimelineItem year={"2022"}>
-          <div className="text-xl font-bold">
-            Open Source Deveveloper
-          </div>
-          <div className="text-normal font-bold text-gray-400">
-            Sep 2020 - Jan 2021
-          </div>
-          <div className="text-lg font-semibold text-gray-300">
-            Pid
-          </div>
-          <div>
-            Helped develop an open source data structure
-            package for Dart/Flutter:{" "}
-            <a
-              className="underline"
-              href="https://github.com/marcglasberg/fast_immutable_collections"
-            >
-              Fast Immutable Collections (FIC)
-            </a>
-          </div>
-        </TimelineItem>
-
-        <TimelineItem start={false} year="2020">
-          <div className="text-xl font-bold">
-            Data Scientist
-          </div>
-          <div className="text-normal font-bold text-gray-400">
-            Feb 2019 - Oct 2019
-          </div>
-          <div className="text-lg font-semibold text-gray-300">
-            Zanthus
-          </div>
-          <div>
-            Data Scientist Full Stack:
-            <ul>
-              <li>Data Extraction (SQL)</li>
-              <li>Preprocessing</li>
-              <li>Modeling</li>
-              <li>Data API (Django)</li>
-              <li>Customer Lifetime Value (CLV)</li>
+        <TimelineItem start={false} year="2024">
+          <TimelineItemContent
+            title="Full Stack Deveveloper"
+            date="Feb 2023 - Jun 2023"
+            institution="Vertical Insure"
+          >
+            <ul className="list-disc pl-4">
+              <li>Frontend: React, Lit, TypeScript</li>
+              <li>
+                Backend: Java, Micronaut, NodeJS, Express
+              </li>
+              <li>DevOps: AWS, Render, DataDog, Retool</li>
             </ul>
-          </div>
+          </TimelineItemContent>
         </TimelineItem>
 
-        <TimelineItem
-          year="2018"
-          activity={TimelineActivity.Education}
-        >
-          <div className="text-xl font-bold">
-            Masters of Baduk Studies (Incomplete)
-          </div>
-          <div className="text-normal font-bold text-gray-400">
-            Aug 2017 - Dec 2017
-          </div>
-          <div className="text-lg font-semibold text-gray-300">
-            Myongji University (South Korea)
-          </div>
-          <div>
-            Lived for a semester in South Korea to study
-            Baduk or Go (board game).
-          </div>
+        <TimelineItem year={"2023"}>
+          <TimelineItemContent
+            title="Go (Board Game) Teacher"
+            date="Jun 2022 - Sep 2023"
+            institution="Self-Employed"
+          >
+            <div>
+              Private lessons, YouTube videos, and an online
+              league, among other activities.
+            </div>
+          </TimelineItemContent>
         </TimelineItem>
 
-        <TimelineItem start={false} year="2017">
-          <div className="text-xl font-bold">
-            Startup Intern
-          </div>
-          <div className="text-normal font-bold text-gray-400">
-            Aug 2016 - Dec 2016
-          </div>
-          <div className="text-lg font-semibold text-gray-300">
-            Vital Care App
-          </div>
-          <div>
-            Marketing, SEO and UI/UX improvements to the
-            Vital Care App.
-          </div>
+        <TimelineItem start={false} year={"2022"}>
+          <TimelineItemContent
+            title="Open Source Deveveloper"
+            date="Sep 2020 - Jan 2021"
+            institution="Pid"
+          >
+            <div>
+              Co-developed an open source data structures
+              package for Dart/Flutter:{" "}
+              <a
+                className="underline"
+                href="https://github.com/marcglasberg/fast_immutable_collections"
+              >
+                Fast Immutable Collections (FIC)
+              </a>
+            </div>
+          </TimelineItemContent>
         </TimelineItem>
 
-        <TimelineItem
-          year="2016"
-          activity={TimelineActivity.Education}
-        >
-          <div className="text-xl font-bold">
-            International Engineering Exchange
-          </div>
-          <div className="text-normal font-bold text-gray-400">
-            Aug 2015 - Aug 2016
-          </div>
-          <div className="text-lg font-semibold text-gray-300">
-            Université Libre de Bruxelles (ULB)
-          </div>
-          <div>
-            One year of exchange in Brussels, Belgium,
-            through a government scholarship.
-          </div>
+        <TimelineItem year="2020">
+          <TimelineItemContent
+            title="Data Scientist"
+            date="Feb 2019 - Oct 2019"
+            institution="Zanthus"
+          >
+            <div>
+              Data Scientist Full Stack: Data Extraction
+              (SQL); Preprocessing, Modeling; Data API
+              (Django); Customer Lifetime Value (CLV).
+            </div>
+          </TimelineItemContent>
         </TimelineItem>
 
         <TimelineItem
           start={false}
+          year="2018"
+          activity={TimelineActivity.Education}
+        >
+          <TimelineItemContent
+            title="Masters of Baduk Studies (Incomplete)"
+            date="Aug 2017 - Dec 2017"
+            institution="Myongji University"
+          >
+            <div>
+              Lived for a semester in South Korea to study
+              Baduk or Go (board game).
+            </div>
+          </TimelineItemContent>
+        </TimelineItem>
+
+        <TimelineItem year="2017">
+          <TimelineItemContent
+            title="Startup Intern"
+            date="Aug 2016 - Dec 2016"
+            institution="Vital Care App"
+          >
+            <div>
+              Marketing, SEO and UI/UX improvements to the
+              Vital Care App.
+            </div>
+          </TimelineItemContent>
+        </TimelineItem>
+
+        <TimelineItem
+          start={false}
+          year="2016"
+          activity={TimelineActivity.Education}
+        >
+          <TimelineItemContent
+            title="International Engineering Exchange"
+            date="Aug 2015 - Aug 2016"
+            institution="Université Libre de Bruxelles (ULB)"
+          >
+            <div>
+              One year of exchange in Brussels, Belgium,
+              through a government scholarship.
+            </div>
+          </TimelineItemContent>
+        </TimelineItem>
+
+        <TimelineItem
           year="2012"
           activity={TimelineActivity.Education}
         >
-          <div className="text-xl font-bold">
-            Electrical Engineering Bachelors
-          </div>
-          <div className="text-normal font-bold text-gray-400">
-            Jan 2011 - Dec 2016
-          </div>
-          <div className="text-lg font-semibold text-gray-300">
-            Universidade de São Paulo (USP)
-          </div>
-          <div>
-            With s strong emphasis on telecommunications.
-          </div>
+          <TimelineItemContent
+            title="Electrical Engineering (BSc)"
+            date="Jan 2011 - Dec 2016"
+            institution="Universidade de São Paulo (USP)"
+          >
+            <div>
+              With s strong emphasis on telecommunications.
+            </div>
+          </TimelineItemContent>
         </TimelineItem>
       </ul>
     </div>

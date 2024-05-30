@@ -26,6 +26,7 @@ export default function App() {
         }}
       >
         <Env />
+        {/* <Performance /> */}
 
         <Aquarium position={[0, 0.25, 0]}>
           <ReactAtom />
