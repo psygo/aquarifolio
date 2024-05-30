@@ -6,6 +6,7 @@ import {
   PortfolioSection,
   projectsContributedData,
   projectsData,
+  PortfolioIntroCard,
 } from "@components/Portfolio/exports"
 
 export default function Portfolio() {
@@ -15,6 +16,8 @@ export default function Portfolio() {
 
       <main className="flex flex-col items-center min-h-screen p-4">
         <article className="flex flex-col gap-6 max-w-[700px]">
+          <PortfolioIntroCard />
+
           <PortfolioSection
             title="Projects"
             href="#projects"

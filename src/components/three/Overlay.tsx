@@ -66,13 +66,17 @@ function IconLink({
   alt,
 }: IconLinkProps) {
   return (
-    <Link href={href}>
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <Image
         src={iconSrc}
         width={size}
         height={size}
         alt={alt}
       />
-    </Link>
+    </a>
   )
 }

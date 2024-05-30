@@ -46,9 +46,9 @@ export function ProjectCard({
         alt={iconAlt}
         className="max-w-[80px]"
       />
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-3">
         <div className="flex flex-wrap gap-2">
-          <h4 className="text-xl font-semibold tracking-tight mb-[-4px]">
+          <h4 className="text-xl font-semibold tracking-tight">
             {title}
           </h4>
           {stars && (
@@ -60,9 +60,11 @@ export function ProjectCard({
             </div>
           )}
         </div>
-        <h5 className="text-sm text-gray-400">
+
+        <h5 className="text-sm text-gray-400 mt-[-8px]">
           {description}
         </h5>
+
         <div className="flex flex-wrap gap-1 ml-[-4px]">
           {badgeList.map((b, i) => (
             <Badge variant="secondary" key={i}>
