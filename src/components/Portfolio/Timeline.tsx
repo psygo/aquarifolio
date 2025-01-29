@@ -99,6 +99,20 @@ export function Timeline() {
   return (
     <div className="border-[1px] ronded-md p-4">
       <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+        <TimelineItem year="2025">
+          <TimelineItemContent
+            title="Book Writer"
+            date="Sep 2025 - Dec 2025"
+            institution="Self-Employed"
+          >
+            <div>
+              Created a book about Go (board game), which
+              also includes a whole package for drawing Go
+              diagrams with LaTeX.
+            </div>
+          </TimelineItemContent>
+        </TimelineItem>
+
         <TimelineItem start={false} year="2024">
           <TimelineItemContent
             title="Full Stack Deveveloper"

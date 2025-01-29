@@ -39,6 +39,16 @@ export const projectsData: ProjectCardProps[] = [
     badgeList: ["Dart", "Flutter", "Data Structures"],
   },
   {
+    href: "https://github.com/psygo/tecnicas_de_go",
+    iconFilename: "tecnicas_de_go_capa.png",
+    iconAlt: "Técnicas de Go Cover",
+    title: "Técnicas de Go",
+    stars: 16,
+    description:
+      "A whole, original book about Go (Baduk or Weiqi), with a complete package for drawing LaTeX vector diagrams.",
+    badgeList: ["LaTeX", "Go (Board Game)"],
+  },
+  {
     href: "https://github.com/FanaroEngineering/traducao_como_jogar_go",
     iconFilename: "como_jogar_go_capa.png",
     iconAlt: "Como Jogar Go Cover",
